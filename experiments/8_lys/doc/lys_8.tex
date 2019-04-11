@@ -1,4 +1,4 @@
-\documentclass[a4paper]{scrreprt}
+\documentclass[a4paper,german]{scrreprt}
 
 % Uncomment to optimize for double-sided printing.
 % \KOMAoptions{twoside}
@@ -7,7 +7,7 @@
 % \KOMAoptions{BCOR=2cm}
 
 % Localization options
-\usepackage[english]{babel}
+\usepackage[german]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -50,6 +50,7 @@
 
 % SI units
 \usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
 
 % Chemistry
 \usepackage{mhchem}
@@ -108,7 +109,7 @@ was - durch Wegfall des hydrophoben Effekts - zur Denaturierung von Lysozym
 führt. Da der hydrophobe Effekt jedoch wegfällt, wird das denaturierte Protein
 in Lösung übergehen und nicht ausfällen.
 
-\subsection{Effekt der Erwärmung von Lysozym auf \SI{90}{\celsius}}
+\subsection{Effekt der Erwärmung von Lysozym auf \SI[detect-weight]{90}{\celsius}}
 
 Die Erhöhung der kinetischen Energie führt zu einer thermischen Denaturierung
 von Lysozym. Durch den weiterhin vorhandenen hydrophoben Effekt wird das
@@ -116,7 +117,7 @@ Protein allerdings ausfällen.
 
 Zu beachten ist, dass die kovalenten Disulphidbrücken erhalten bleiben.
 
-\subsection{Effekt der zugabe von 0.01 M \ce{HCl} zu Lysozym}
+\subsection{Effekt der Zugabe von \SI[detect-weight]{0.01}{\Molar} \ce{HCl} zu Lysozym}
 
 Der pH einer 0.01 M \ce{HCl}-Lösung ist gegeben als $\texttt{pH} \approx
 -\log_{10}(0.01) = 2$. Solch eine Lösung wird somit jegliche protonierbaren
@@ -125,7 +126,84 @@ ionischen Wechselwirkungen zwischen den Seitenketten, was zu einer
 Denaturierung des Lysozyms führt. Da der hydrophobe Effekt weiterhin vorhanden
 ist, wird es zu einer Ausfällung des Proteins kommen.
 
+\subsection{Reaktionsmechanismus von Lysozym}
+
+\subsection{Theoretisch mögliche Disulphid-Brücken in Lysozym}
+
+Lysozym hat vier Disulphid-Brücken, und damit acht Cystein-Reste. Damit sind
+für die erste Bindung $\binom{8}{2}$, für die zweite $\binom{6}{2}$ etc
+Möglichkeiten vorhanden. Da die Reihenfolge der Bindungen keine Rolle spielt,
+folgt die totale Anzahl Möglichkeiten als:
+
+\[
+	\frac{\binom{8}{2} \binom{6}{2} \binom{4}{2} \binom{2}{2}}{\frac{n}{2}!} = 105
+\]
+
+Dies bedeutet, dass Faltungsintermediate so aufgebaut sein müssen, dass die
+Bildung der korrekten Disulfid-Brücken bevorzugt wird.
+
 \chapter{Material \& Methoden}
+
+\section{Material}
+
+\begin{itemize}
+\item 2 \SI{500}{ml} Bechergläser
+\item 1 \SI{100}{ml} Messzylinder
+\item 1 Styroporbox, gefüllt mit Eis
+\item Dialyseklammern
+\item Pipetten \SIrange{10}{100}{\ul}, \SIrange{100}{1000}{\ul}
+\item Spritze mit Nadel
+\item Magnetrührer
+\item Persitaltische Pumpe
+\end{itemize}
+
+\section{Chemikalien und Lösungen}
+
+\begin{itemize}
+	\item Tris(hexdroxymethyl)amonimethan
+	\item EDTA (Triplex III)
+	\item Zellwände von Micrococcus
+	\item Di-Kaliumhydrogenphosphat
+	\item Kalium-dihydrogenphosphat
+	\item Guanidine-Hydrochlorid
+	\item 1,4 Dithioerythrit (DTE)
+	\item Glutathion, oxidiert (GSSG)
+	\item Glutathion, reduziert (GSH)
+	\item Arginine
+
+	\item 10x TE (Tris-EDTA) \SI{1}{\Molar} Tris
+	\begin{itemize}
+		\item \SI{1}{\Molar} Tris
+		\item \SI{10}{\milli\Molar} Tris
+		\item pH: 8.5
+	\end{itemize}
+
+	\item Assay-Lösung
+	\begin{itemize}
+		\item \SI{30}{\milli\Molar} Kaliumphosphat
+		\item \SI{0.1}{\percent} (w/v) BSA
+		\item \SI{10}{mg} Zellwände Micrococcus lysodeiktikus pro \SI{2.5}{ml}
+		\item pH: 7.4
+	\end{itemize}
+
+	\item Guanidine-\ce{HCl}
+	\begin{itemize}
+		\item \SI{8}{\Molar} Guanidine-hydrochlorid
+		\item \SI{0.1}{\Molar} Tris
+		\item \SI{1}{\milli\Molar} EDTA
+	\end{itemize}
+	\item GSSG-Puffer
+	\begin{itemize}
+		\item \SI{0.1}{\Molar} Tris
+		\item \SI{1}{\milli\Molar} EDTA
+		\item \SI{1}{\milli\Molar} Glutathion, oxidiert (GSSG)
+		\item \SI{0.1}{\milli\Molar} Glutathion, reduziert (GSH)
+		\item \SI{0.8}{\milli\Molar} Arginine
+		\item pH: 8.5
+	\end{itemize}
+\end{itemize}
+
+
 
 \chapter{Resultat}
 
