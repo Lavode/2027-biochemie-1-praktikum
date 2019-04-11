@@ -1,0 +1,134 @@
+\documentclass[a4paper]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+
+% Chemistry
+\usepackage{mhchem}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Praktikum Biochemie 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Praktikum Biochemie 1}
+\title{8 - Renaturierung von Hühnereiweiss-Lysozym}
+
+\author{David Willimann \maillink{david.willimann@students.unibe.ch} - 17-118-977 \\ Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Einleitung \& Theorie}
+
+\section{Einleitung}
+
+In diesem Experiment wurde die reversible thermische und chemische
+Denaturierung von Hühnereiweiss-Lysozym untersucht. Hierzu wurde einem Ei
+Eiweiss entnommen, und die enthaltenen Proteine chemisch und thermisch
+denaturiert. Nach erfolgter Renaturierung wurde mittels Photometer die
+enzymatische Aktivität gegenüber Zellwänden gemessen, und mit nativem Lysozym
+verglichen.
+
+\section{Theorie}
+
+\subsection{Effekt von 6M Harnstoff auf Lysozym}
+
+Harnstoff, als chaotropes Salz, führt zu einer Störung der Wasserstoffbrücken
+was - durch Wegfall des hydrophoben Effekts - zur Denaturierung von Lysozym
+führt. Da der hydrophobe Effekt jedoch wegfällt, wird das denaturierte Protein
+in Lösung übergehen und nicht ausfällen.
+
+\subsection{Effekt der Erwärmung von Lysozym auf \SI{90}{\celsius}}
+
+Die Erhöhung der kinetischen Energie führt zu einer thermischen Denaturierung
+von Lysozym. Durch den weiterhin vorhandenen hydrophoben Effekt wird das
+Protein allerdings ausfällen.
+
+Zu beachten ist, dass die kovalenten Disulphidbrücken erhalten bleiben.
+
+\subsection{Effekt der zugabe von 0.01 M \ce{HCl} zu Lysozym}
+
+Der pH einer 0.01 M \ce{HCl}-Lösung ist gegeben als $\texttt{pH} \approx
+-\log_{10}(0.01) = 2$. Solch eine Lösung wird somit jegliche protonierbaren
+Seitenketten protonieren. Diese Ladungsverschiebung führt zu einem Wegfall der
+ionischen Wechselwirkungen zwischen den Seitenketten, was zu einer
+Denaturierung des Lysozyms führt. Da der hydrophobe Effekt weiterhin vorhanden
+ist, wird es zu einer Ausfällung des Proteins kommen.
+
+\chapter{Material \& Methoden}
+
+\chapter{Resultat}
+
+\chapter{Fazit}
+
+\end{document}

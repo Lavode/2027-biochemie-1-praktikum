@@ -1,0 +1,4 @@
+organizational/
+experiments/*/*.pdf
+experiments/**/*.log
+experiments/**/*.pdf
