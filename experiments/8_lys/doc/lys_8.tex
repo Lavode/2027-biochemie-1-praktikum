@@ -22,6 +22,8 @@
 % Advanced tables
 \usepackage{tabu}
 \usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
 
 % Fancy tablerules
 \usepackage{booktabs}
@@ -128,6 +130,26 @@ ist, wird es zu einer Ausfällung des Proteins kommen.
 
 \subsection{Reaktionsmechanismus von Lysozym}
 
+Das aktive Zentrum von Lysozym liegt zwischen einem Aspartat an Stelle 52, und
+einer Glutaminsäure an Stelle 35.
+
+In einem ersten Schritt wird die 4-OH Abgangsgruppe des NAG-Restes durch Glu-35
+protoniert. Durch das Umklappen der Sessel-Konformation wird die abzuspaltende
+Bindung des Substrats schliesslich getrennt. Wasser führt dann dazu, dass die
+Bindung zwischen Substract und Asp-52 des Intermediats aufgehoben wird, und die
+ursprüngliche Konformation wiederhergestelt wird. \cite{lys}
+
+Dieser Mechanismus erklärt auch, wieso Lysozym nur in gefaltenem Zustand aktiv
+ist - in ungefaltenem Zustand sind Asp-52 und Glu-35 zu weit auseinander, als
+dass das Substrat dazwischen binden könnte.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{data/lys_mechanism}
+	\caption{Reaktionsmechanismus von Lysozym, aus \cite{lys}}
+	\label{fig:lys_mechanism}
+\end{figure}
+
 \subsection{Theoretisch mögliche Disulphid-Brücken in Lysozym}
 
 Lysozym hat vier Disulphid-Brücken, und damit acht Cystein-Reste. Damit sind
@@ -203,10 +225,330 @@ Bildung der korrekten Disulfid-Brücken bevorzugt wird.
 	\end{itemize}
 \end{itemize}
 
+\chapter{Methoden}
 
+\section{Vorbereitung Lysozym}
+
+\subsection{Natives Lysozym}
+
+\begin{itemize}
+	\item Ei mit Skalpellspitze ankratzen
+	\item \SI{1.3}{ml} Eiweiss entlang der Wand des Eis entnehmen, auf Eis stellen
+	\item \SI{0.05}{ml} des entnommenen Eiweiss in \SI{50}{ml} 1x TE lösen,
+		auf Eis stellen $\Rightarrow$ natives Lysozym
+\end{itemize}
+
+\subsection{Denaturiertes Lysozym}
+
+\begin{itemize}
+	\item \SI{0.2}{ml} des eentnommenen Eiweiss in \SI{2}{ml}
+		Guanidine-\ce{HCl} lösen, bei Raumtemperatur stehen lassen
+		$\Rightarrow$ denaturiertes Lysozym
+	\item Kurz vor der Aktivitätsmessung in \SI{20}{ml} 1x TE-Puffer unter
+		Rühren verdünnen, zwecks Renaturierung.
+\end{itemize}
+
+\subsection{Reduziertes Lysozym}
+
+\begin{itemize}
+	\item Rest des Eis \SIrange{5}{10}{min} kochen, unter Wasser abkühlen
+	\item \SI{1}{g} gekochtes Eiweiss zerdrücken, unter langsamen Rühren in
+		\SI{4.5}{ml} Guanidine-\ce{HCl} und \SI{39}{mg} DTE während
+		\SI{30}{min} lösen.
+	\item Mit Guanidine-\ce{HCl} auf \SI{6.0}{ml} auffüllen.
+	\item \SI{1}{ml} der klaren Eiweiss-Lösung entnehmen. Zwecks Entfernung
+		von DTE zweimal je eine Stunde gegen \SI{300}{ml}
+		Guanidine-\ce{HCl} dialysieren:
+	\item Nach zweifacher Dialyse \SI{0.2}{ml} Lösung aus Dialyseschlauch
+		entnehmen, und durch sehr langsames Zutropfen von GSSG-Puffer
+		auf \SI{20}{ml} verdünnen $\Rightarrow$ reduziertes Lysosym.
+\end{itemize}
+
+\section{Aktivitätsmessung}
+
+Folgende Messungen werden durchgeführt:
+\begin{itemize}
+	\item 2x natives Lysozym
+		\begin{itemize}
+			\item Morgen: t [min] = 0, 1, 2, \ldots, 10, 19, 20, 29, 30
+			\item Nachmittag: t [min] = 0, 1, 2, \ldots, 10, 19, 20, 29, 30
+		\end{itemize}
+	\item 2x denaturiertes Lysozym
+		\begin{itemize}
+			\item Erste Messung: t [min] = 0, 1, 2, \ldots, 10, 19, 20, 29, 30, 39, 49, 50
+			\item Zweite Messung (40 Minuten nach erster): t [min] = 0, 1, 2, \ldots, 10
+		\end{itemize}
+	\item 1x reduziertes Lysozym: t [min] = 0, 1, 2, \ldots, 10, 19, 20, 29, 30
+\end{itemize}
+
+Zur Vorbereitung der Assays werden \SI{10}{mg} Zellwände in \SI{2.5}{ml}
+Assay-Lösung suspendiert, und auf Eis gelagert. Die Assays werden dann wie
+folgt hergestellt. Wichtig ist, dass das Lysozym erst kurz vor der Messung
+hinzugegeben wird, da dadurch die Enzym-Aktivität startet:
+\\
+
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	Assay-Lösung          & \SI{100}{\ul} & \SI{100}{\ul} & \SI{100}{\ul} \\
+	TE Puffer             & \SI{800}{\ul} & \SI{800}{\ul} & \SI{300}{\ul} \\
+	Natives Lysozym       & \SI{100}{\ul} &               &               \\
+	Denaturiertes Lysozym &               & \SI{100}{\ul} &               \\
+	Reduziertes Lysozym   &               &               & \SI{600}{\ul} \\
+	\hline
+\end{tabular}
+\\
+
+Die Messung der Absorption in Photometer findet bei \SI{578}{nm} statt.  Direkt
+vor und zwischen den Messungen müssen die Assays immer wieder gestürzt werden.
 
 \chapter{Resultat}
 
+\section{Messwerte}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l d{3} d{3} d{3} d{3} d{3}|}
+		\hline
+		Zeit [min] & \multicolumn{1}{c}{$R_1$} & \multicolumn{1}{c}{$D_2$} & \multicolumn{1}{c}{$D_1$} & \multicolumn{1}{c}{$N_2$} & \multicolumn{1}{c|}{$N_1$} \\
+		\hline
+		0  & 0.393 & 0.346 & 0.413 & 0.392 & 0.372 \\
+		\hline
+		1  & 0.305 & 0.354 & 0.348 & 0.237 & 0.303 \\
+		\hline
+		2  & 0.283 & 0.333 & 0.376 & 0.298 & 0.245 \\
+		\hline
+		3  & 0.24  & 0.349 & 0.371 & 0.298 & 0.313 \\
+		\hline
+		4  & 0.201 & 0.297 & 0.381 & 0.217 & 0.309 \\
+		\hline
+		5  & 0.215 & 0.354 & 0.385 & 0.181 & 0.335 \\
+		\hline
+		6  & 0.156 & 0.305 & 0.359 & 0.231 & 0.316 \\
+		\hline
+		7  & 0.301 & 0.294 & 0.363 & 0.22  & 0.318 \\
+		\hline
+		8  & 0.32  & 0.338 & 0.389 & 0.216 & 0.277 \\
+		\hline
+		9  & 0.303 & 0.249 & 0.297 & 0.232 & 0.333 \\
+		\hline
+		10 & 0.258 & 0.308 & 0.354 & 0.217 & 0.299 \\
+		\hline
+		19 & 0.213 &       & 0.248 & 0.234 & 0.277 \\
+		\hline
+		20 & 0.255 &       & 0.333 & 0.196 & 0.321 \\
+		\hline
+		29 & 0.632 &       & 0.203 & 0.175 & 0.234 \\
+		\hline
+		30 & 0.662 &       & 0.28  & 0.133 & 0.199 \\
+		\hline
+		39 &       &       & 0.298 &       & 0.181 \\
+		\hline
+		40 &       &       & 0.139 &       & 0.097 \\
+		\hline
+		49 &       &       & 0.278 &       & 0.269 \\
+		\hline
+		50 &       &       & 0.34  &       & 0.222 \\
+		\hline
+	\end{tabular}
+	\caption{Absorption bei \SI{578}{nm} von 5 Lysozym-Messreihen.}
+	\label{table:1}
+\end{table}
+
+In Tabelle \ref{table:1} sind die Rohdaten der fünf Mess-Serien der Lysozym-Lösungen gelistet. Hierbei sind:
+\begin{description}
+	\item[$N_1$] Erste Messung nativen Lysozyms (Morgen)
+	\item[$N_2$] Zweite Messung nativen Lysozyms (Nachmittag)
+	\item[$D_1$] Erste Messung denaturierten Lysozyms
+	\item[$D_2$] Zweite Messung denaturierten Lysozyms
+	\item[$R_1$] Erste Messung reduziertes Lysozyms
+\end{description}
+
+Allen Messungen ist gemein, dass sie eine sehr hohe Varianz haben. Potentiell
+stammt diese daher, dass die Zellwände in den Assays sich sehr schnell setzten
+- und damit der gemessene Absorptionswert stark davon abhängt, ob fünf oder 15
+Sekunden vor der Messung das letzte Mal geschüttelt wurde.
+
+Weiterhin sind die letzten zwei Messwerte des reduzierten Lysozyms stark
+erhöht. Während der Durchführung war der Parafilm auf der Küvette des
+reduzierten Lysosyms nicht satt, was teilweise zu Verlust der Probe führte.
+Dies könnte dazu geführt haben, dass gegen Ende der Messreihe nicht mehr
+genügend Flüssigkeit in der Küvette war und damit beispielsweise ein Klumpen
+Zellwände an der Wand haftete.
+
+Die folgenden Abbildungen stellen den zeitlichen Verlauf der Absorption von Licht der Wellenlänge \SI{578}{nm}, durch die Assays mit nativem (Abbildung \ref{fig:absorption_native}), denaturiertem (Abbildung \ref{fig:absorption_denat}) und reduzierten (Abbildung \ref{fig:absorption_reduced}) Lysozym dar.
+
+Bei nativem und denaturiertem Lysozym zeigt eine lineare Regression einen klare
+Abnahme der Absorption über Zeit - ein Resultat des Abbaus der Zellwände durch
+das Lysozym. Bei reduziertem Lysozym ist dieser Trend ersichtlich, solange die
+beiden letzten Messwerte ignoriert werden (Messreihe ``reduced\_1''). Werden
+die beiden letzten Messwerte einbezogen, ist kein solcher Trend ersichtlich
+(Messreihe ``reduced\_2'').
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{data/absorption_nativ}
+	\caption{Absorption von nativem Lysozym}
+	\label{fig:absorption_native}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{data/absorption_denat}
+	\caption{Absorption von denaturiertem Lysozym}
+	\label{fig:absorption_denat}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{data/absorption_reduced}
+	\caption{Absorption von reduziertem Lysozym}
+	\label{fig:absorption_reduced}
+\end{figure}
+
+\section{Standardisierte Aktivität}
+
+Um die Messwerte der drei Eiweisslösungen - welche in unterschiedlichem Masse
+verdünnt wurden - zu vergleichen, wird die Aktivität definiert als:
+
+\[
+	\text{Aktivität} = \frac{\Delta \text{OD}_{578 / \text{min}}}{0.01} \cdot F
+\] 
+
+Wobei $\text{OD}_{578 / \text{min}}$ die Veränderung der gemessenen Optischen
+Dichte bei \SI{578}{nm} während einer Minute, und $F$ der Verdünnungsfaktor der
+Probe - definiert als Inverses der Produkte der einzelnen Verdünnungen - ist.
+
+\subsection{Verdünnungsfaktoren}
+
+Folgende Verdünnungsfaktoren ergeben sich damit:
+\begin{itemize}
+	\item $F_{\text{nativ}} = \left (
+			\frac{\SI{0.05}{ml}}{\SI{50.05}{ml}} \cdot
+	                \frac{\SI{100}{ul}}{\SI{1000}{ul}}
+		\right )^{-1} = 10010$
+	\item $F_{\text{denat}} = \left (
+			\frac{\SI{0.2}{ml}}{\SI{2.2}{ml}} \cdot
+			\frac{\SI{1}{ml}}{\SI{21}{ml}} \cdot
+			\frac{\SI{100}{\ul}}{\SI{1000}{\ul}}
+		\right )^{-1} = 2310$
+	\item $F_{\text{reduced}} = \left (
+			\frac{\SI{1}{ml}}{\SI{6}{ml}} \cdot
+			\frac{\SI{0.2}{ml}}{\SI{20}{ml}} \cdot
+			\frac{\SI{600}{\ul}}{\SI{1000}{\ul}}
+		\right )^{-1} = 1000$
+\end{itemize}
+
+\section{Aktivität nativen Lysozyms}
+
+Die durchschnittliche Aktivität von frischem Lysozym innert der ersten 10
+Minuten ist gegeben als:
+
+\[
+	A_0 = \frac{0.372 - 0.299}{10 \cdot 0.01} \cdot 10010 = 7307.3
+\]
+
+\section{Aktivität nativen Lysozyms über Zeit}
+
+Die Aktivität nativen Lysozyms im Laufe der Zeit - als absolute Werte sowohl
+als Prozentsatz von $A_0$ - ist gegeben als:
+\\
+
+\begin{tabu}{|l|l|l|}
+	\hline
+	Zeit [min] & Aktivität & Aktivität (\% $A_0$) \\
+	\hline
+	$A_0$ & 7307.3 & 100\% \\
+	10 & 34034 & 466\% \\ 
+	20 & -44044 & -603\% \\ 
+	30 & 35035 & 479\% \\ 
+	\hline
+\end{tabu}
+\\
+
+Aufgrund der hohen Varianz der Messwerte lässt sich die erwartete Limitierung
+der Enzymaktivität aufgrund Substrat-Limitation nicht sehen.
+
+\section{Aktivität natives Lysozym Morgen / Nachmittag}
+
+Die nachstehende Tabelle vergleicht die Enzymaktivität des frischen Lysozyms
+von Morgen, mit jener vom Nachmittag.
+\\
+
+\begin{tabu}{|l|l|l|}
+	\hline
+	Zeit [min] & Aktivität Morgen & Aktivität Nachmittag \\
+	\hline
+	$A_0$ & 7307.3 & 17517.5 \\
+	10 & 34034 & 38038 \\ 
+	20 & -44044 & 42042 \\ 
+	\hline
+\end{tabu}
+\\
+
+Aufgrund der gemssenen Werte scheint die Aktivität des Lysozyms durch gekühlte
+Lagerung für einige Stunden nicht gelitten zu haben, was darauf hindeutet, dass
+sich gekühltes Lysozym kaum spontan entfaltet. Wegen der hohen Varianz ist
+diese Aussage jedoch mit Vorsicht zu geniessen.
+
+\section{Renaturierungsausbeute des denaturierten Eiweiss}
+
+Um nicht aufgrund von Substratlimitation falsche Aussagen zu treffen - sowie um
+die hohe Varianz mittels grosser Dichte von Messpunkten zu limitieren, werden
+hier nur die $A_0$ Werte - dh mittlere Aktivität innert der ersten 10 Minuten -
+verglichen.
+\\
+
+\begin{tabu}{|l|l|l|}
+	\hline
+	Messreihe & $A_0$ & In \% von $A_0$ von $N_1$ \\
+	\hline
+	$N_1$ & 7307.3 & 100\% \\
+	$D_1$ & 1362.9 & 18.7\% \\
+	$D_2$ & 877.8 & 12.0\% \\
+	\hline
+\end{tabu}
+\\
+
+Die mittlere Ausbeute von denaturiertem Lysozym liegt somit bei 15.35\%.
+
+\section{Renaturierungsausbeute des reduzierten Eiweiss}
+
+Analog des vorherigen Abschnittes folgt die Renaturierungsausbeute des
+reduzierten Eiweiss als:
+
+\begin{align*}
+	A_0(N_1) & = 7307.3 \\
+	A_0(R_1) & = 1350 \\
+	\text{Renaturierungsausbeute} & = \frac{1350}{7307.3} = 0.185
+\end{align*}
+
+Die Renaturierungsausbeute von reduziertem Lysozym liegt somit bei 18.5\%.
+
+\section{Vergleich der Renaturierungsausbeuten}
+
+Wie erwartet liegt die enzymatische Aktivität von renaturiertem unter jener von
+nativem Lysozym. Folglich kann nicht alles Lysozyim im TE-Puffer renaturiert
+werden.
+
+Unerwarteterweise liegt $A_0$ des reduzierten Lysozyms allerdings über $A_0$
+des denaturierten Lysozyms. Da beim reduzierten Lysozym zusätzlich die
+Disulphid-Brücken reduziert wurden, wäre zu erwarten gewesen, dass sich weniger
+Lysozym wieder korrekt faltet, und damit enzymatisch aktiv ist.
+
+Dies wird eine Folge der verschiedenen Fehlerquellen sein, die das Experiment
+beinflusst haben.
+
 \chapter{Fazit}
+
+Aufgrund der extrem hohen Varianz der Messwerte konnten gewisse Erwartungen
+nicht nachgewiesen werden. Zusätzlich ist das Vertrauen in die Aussagen die
+gemacht wurden relativ klein, da sie potentiell nur ein Resultat von
+Schwankungen der Messwerte sind.
+
+Würde das Experiment wiederholt werden, müsste zwingend die Quelle der hohen
+Varianz gefunden, und soweit möglich eliminiert werden.
+
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
