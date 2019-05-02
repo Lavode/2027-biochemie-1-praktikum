@@ -1,0 +1,241 @@
+\documentclass[a4paper,german]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
+
+% Chemistry
+\usepackage{mhchem}
+
+% Subfigures & captions
+\usepackage{subcaption}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Praktikum Biochemie 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Praktikum Biochemie 1}
+\title{7 - Proteinimport in Hefe Mitochondrien}
+
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Einleitung}
+
+\section{Zielsetzung}
+
+Ziel des Experiments war es, den Transport von Proteinen durch die
+Mitochondrien-Matrix zu untersuchen. Hierzu wurde eine mit
+\ce{^{35}S-\text{Methionin}} markierte Alkoholdehydrogenase 3 (ADHIII) in
+Mitochondrien importiert, und deren Import im Anschluss durch
+SDS-Polyacrylamidgelelektrophorese analysiert.
+
+\section{Protein-Import in Mitochondrien}
+
+Viele der Proteine die im Mitochondrium benötigt werden, sind im Zellkern der
+Zelle codiert, werden in deren Cytoplasma synthetisiert, und anschliessend als
+komplettes Protein in das Mitochondrium importiert.
+
+Ausgelöst wird dies durch eine positiv geladene N-terminale Sequenz der
+jeweiligen Proteine, die an Rezeptor-Proteine in der Membran binden. Im
+Anschluss werden die Proteine durch den TOM-Komplex in den Zellzwischenraum,
+und darauf folgend durch den TIM-Komplex in das Zellinnere
+geschleust\cite{protein_transport}.
+
+Getrieben wird dieser Transport Matrix-seitig durch mHsp 70, das
+mitochondrielle Heat-Shock Protein 70, unter Verbrauch von ATP.
+
+In den meisten Fällen wird die N-terminale Sequenz, die als Signal für den
+Transport diente, im Zellinneren der Mitochondrien abgetrennt - das Protein
+someit einige Sequenzen kürzer.
+
+\section{SDS Page}
+
+SDS-Page ist eine Methode der Elektrophorese, welche erlaubt, Proteine der
+Grösse nach zu ordnen. Hierzu werden die Proteine mittels SDS denaturiert,
+wobei sich das negative geladene SDS an das dentaurierte Protein anlagert, und
+so zu einer uniformen Ladungsverteilung führt. Dies stellt sicher, dass die
+Proteine in folgenden Schritten nur gemäss ihrer Grösse, und nicht gemäss
+potentieller Ladungsunterschiede, angeordnet werden.
+
+Diese Proteine werden dann in ein Gel - ein Polyacrylamid, hergestellt aus der
+Polymerisation von Acrylamid - gegeben. Durch Anlegen eines elektrischen Feldes
+wandern die Proteine durch das Gel, kleinere Proteine schneller - und damit
+weiter - wandern als grosse.
+
+Zum Abschluss werden die Proteine fixiert und eingefärbt, was damit zu einer
+sichtbaren Aufteilung der Grösse nach führt.
+
+\chapter{Chemikalien}
+
+\section{Proteinase K}
+
+Proteinase K ist eine Proteinase mit tiefer Spezifität - sie spaltet Proteine
+bevorzugt nach hydrophoben Aminosäuren, führt aber bei langer Inkubationszeit
+auch zu einem kompletten Abbau des Proteins. Durch das Vorhandensein von
+denaturierenden Reagenzien wie SDS lässt sich die Aktivität zusätzlich
+steigern, da das Protein für die Proteinase einfacher zugänglich wird. \cite{stimulation_proteinase}
+
+Im Experiment diente Proteinase K dazu, das Substrat das ausserhalb der Zelle
+verblieb abzubauen, bevor die Mitochondrien aufgebrochen wurden. Um zu
+verhindern dass es die Zellmembran der Mitochondrien angriff, wurde sowohl die
+Inkubationszeit, als auch die Inkubationstemperatur, tief gehalten.
+
+\section{PMSF}
+
+Phenylmethylsufonyl-Fluorid (PMSF) ist ein Serin-Proteasen-Inhibitor, der somit
+Eigenschaften eines Nervengiftes hat.
+
+Im Experiment wurde mittels PMSF die vorher zugegebene Proteinkinase
+inaktiviert. Dies verhinderte, dass nach Aufbrechen der Mitochondrien die
+Kinase die Proteine des Mitochondrium-Inneren abbauten.
+
+\section{AVO}
+
+AVO ist eine Mischung von drei wirkstoffen mit antibakterieller Wirkung -
+Antimycin A, Valinomycin, und Oligomycin.
+
+Antimycin A Bindent an den Komplex 3 und verhindert den Transfer von Elektronen
+als Teil der oxidativen Phosphorylierung. Dies verhindert den Aufbau des
+Protonengradienten, und somit schlussendliche die Synthese von ATP.
+
+Valinomycin fungiert als Transporter für Kalium, der in der Lage ist, durch
+Lipiddoppelschichten zu diffundieren. Damit führt es zu einem Transport von
+Kalium aus dem Zellinneren in den extrazellulären Raum, was das
+Membranpotential vermindert.
+
+Oligomycin blockiert den Protonen-Kanal der ATP-Synthase, und verhindert so
+direkt, dass ATP synthetisiert werden kann.
+
+Im Experiment diente diese Mischung dazu, das Membranpotential abzubauen, und den
+Import von Proteinen - der sowohl ein Membranpotential als auch ATP benötigt - zu
+stoppen.
+
+\section{NADH}
+
+NADH ist ein universeller Elektronen-Träger, der in vielen biochemischen Pfaden
+eine wichtige Rolle spielt.
+
+Im Experiment erlaubte NADH den Mitochondrien, ihr Membranpotential aufzubauen
+und aufrechtzuerhalten.
+
+\section{BSA \& Sucrose}
+
+Bovines Serumalbumin (BSA) ist ein Protein aus dem Blutplasma von Kühen, mit
+hoher und breiter Bindungsfähigkeit für polare Stoffe wie Wasser oder
+Metallionen, wie auch weniger polare Stoffe wie Fettsäuren.
+
+Im Experiment diente es dazu, sowohl ADHIII als auch die Mitochondrien zu
+binden, um sie während beispielsweise des Pipettiervorganges vor mechanischen
+Einwirkungen zu schützen.
+
+Sucrose - ein einfacher Zweifachzucker bestehend aus einer Glucose und einer
+Fructose verbunden via eine Ether-Bindung, stabilisierte die Mitochondrien
+durch Bindung an deren Membran.
+
+\section{Kreatinkinase \& Phosphokreatin}
+
+Phosphokreatin ist ein phosphoryliertes Kreatin-Molekül, das als Energiereserve
+in beispielsweise Muskelzellen und dem Gehirn dient. Dies im Zusammenspiel mit
+der Kreatinkinase, die eine Phosphoryl-Gruppe des Phosphokreatins auf ADP
+überträgt, und somit ATP regeneriert.
+
+Im Experiment stellte die zugegebene Reserve von Phosphokreatin und
+Kreatinkinase sicher, dass für den Proteinimport genügend ATP zur Verfügung
+stand, ohne dass grosse Mengen ATP zugegeben werden musste.
+
+\section{SDS}
+
+Natriumdodecylsulfat (SDS, vom Englischen sodium dodecyl sulfate) ist eine
+organische Verbindung mit denaturierenden Eigenschaften. Durch die Kombination
+aus polarem Kopf und apolarem Schwanz findet es auch Verwendung in
+Reinigungsmitteln, da es erlaubt, apolare Substanzen in beispielsweise Wasser
+zu lösen.
+
+Im Experiment wurden die Proteine mittels SDS denaturiert. Durch die so
+entstehende uniforme Ladungsverteilung wurde auch sichergestellt, dass die
+Proteine entsprechend ihrer Grösse - ohne Einfluss ihrer Ladung - angeordnet
+wurden.
+
+\chapter{Durchführug}
+
+\chapter{Resultate}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
