@@ -123,6 +123,12 @@ In den meisten Fällen wird die N-terminale Sequenz, die als Signal für den
 Transport diente, im Zellinneren der Mitochondrien abgetrennt - das Protein
 someit einige Sequenzen kürzer.
 
+\section{Verwendetes Substrat}
+
+Die \ce{^{35}S-\text{Methionin}} markierte ADHIII wurde in-vitro hergestellt,
+um sie mit dem radioaktivem Marker zu versehen, sowie um sicherzustellen, dass
+die N-terminale Sequenz, welche den Import des Proteins auslöst, vorhanden ist.
+
 \section{SDS Page}
 
 SDS-Page ist eine Methode der Elektrophorese, welche erlaubt, Proteine der
@@ -160,7 +166,7 @@ Inkubationszeit, als auch die Inkubationstemperatur, tief gehalten.
 Phenylmethylsufonyl-Fluorid (PMSF) ist ein Serin-Proteasen-Inhibitor, der somit
 Eigenschaften eines Nervengiftes hat.
 
-Im Experiment wurde mittels PMSF die vorher zugegebene Proteinkinase
+Im Experiment wurde mittels PMSF die vorher zugegebene Proteinase
 inaktiviert. Dies verhinderte, dass nach Aufbrechen der Mitochondrien die
 Kinase die Proteine des Mitochondrium-Inneren abbauten.
 
@@ -233,7 +239,261 @@ wurden.
 
 \chapter{Durchführug}
 
+\section{Herstellung Mastermix}
+
+Der Mastermix wurde hergestellt aus:
+\begin{itemize}
+	\item \SI{193.75}{\ul} Importpuffer, pH 7.2
+	\item \SI{10}{\ul} \SI{0.1}{\Molar} ATP
+	\item \SI{5}{\ul} \SI{10}{\mg \per \ml} Kreatinkinase
+	\item \SI{5}{\ul} \SI{1}{\Molar} Phosphokreatin
+	\item \SI{5}{\ul} \SI{0.1}{\Molar} NADH
+\end{itemize}
+
+\section{Vorbereitung Proben}
+
+Vier Proben wurden vorbereitet, gemäss folgender Tabelle.
+\\
+
+\begin{tabu}{lcccc}
+	\toprule
+	Importreaktion & & $-\Delta\Psi$ & +Proteinase K & +Proteinase K, $-\Delta\Psi$ \\
+	Probe & 1 & 2 & 3 & 4 \\
+	\midrule
+	Mastermix & \SI{43.75}{\ul} & \SI{43.75}{\ul} & \SI{43.75}{\ul} & \SI{43.75}{\ul} \\
+	AVO Mix & \SI{0}{\ul} & \SI{1}{\ul} &\SI{0}{\ul} & \SI{1}{\ul} \\
+	Mitochondrien (\SI{10}{\mg \per \ml}) & \SI{2}{\ul} & \SI{2}{\ul} &\SI{2}{\ul} & \SI{2}{\ul} \\
+	Substrat & \SI{2}{\ul} & \SI{2}{\ul} &\SI{2}{\ul} & \SI{2}{\ul} \\
+	Proteinase K & \SI{0}{\ul} & \SI{0}{\ul} &\SI{1}{\ul} & \SI{1}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Im Detail:
+\begin{itemize}
+	\item Benötigte Menge des Mastermixes und AVO-Mix zu allen Proben zugegeben, durch Pipettieren gemischt.
+	\item Mitochondrien zu allen Proben dazugegeben, durch Antippen gemischt.
+	\item Proben für 3 Minuten bei \SI{27}{\celsius} in Heizblock gegeben.
+	\item Substrat zu Proben dazugegeben, durch Antippen gemischt.
+	\item Alle Proben für 30 Minuten bei \SI{27}{\celsius} inkubiert.
+	\item Importreaktion aller Proben durch Zugabe von \SI{0.5}{\ul} AVO gestoppt.
+	\item Zugabe \SI{1}{\ul} Proteinase-K zu Proben 3 und 4 zwecks Abbau
+		extrazellulären Proteinen.
+	\item Inkubation aller Proben für 15 Minuten auf Eis.
+	\item Zugabe \SI{0.9}{\ul} PMSF zu allen Proben zwecks Inaktivierung der Proteinase K.
+	\item Inkubation aller Proben für 5 Minuten auf Eis.
+	\item Zentrifugation der Proben bei 14000 RPM, \SI{4}{\celsius} während 5 Minuten.
+	\item Entfernen des Überstandes
+\end{itemize}
+
+Zu diesem Zeitpunkt wurden die gebildeten Pellets betrachtet. Es ergaben sich
+folgende Beobachtungen und Überlegungen:
+\\
+
+\begin{tabu}{lp{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+	\toprule
+	Importreaktion & & $-\Delta\Psi$ & +Proteinase K & +Proteinase K, $-\Delta\Psi$ \\
+	\midrule
+	Probe & 1 & 2 & 3 & 4 \\
+	Durchmesser & \SI{2}{mm} & \SI{2}{mm} & \SI{1}{mm} & \SI{1}{mm} \\
+	Bestandteile & Mitochondrien, importierte \& extrazelluläre Proteine & Mitochondrien \& extrazelluläre Proteine & Mitochondrien \& importierte Proteine & Mitochondrien \\
+	\bottomrule
+\end{tabu}
+\\
+
+Anschliessend wurde mit den Pellets weitergearbeitet.
+
+\begin{itemize}
+	\item Resuspensation der Pellets in \SI{100}{\ul} eiskaltem SEM-Puffer.
+	\item Erneute Zentrifugation der Proben bei 14000 RPM, \SI{4}{\celsius} während 5 Minuten.
+	\item Entfernen des Überstandes, Resuspensation der Pellets in \SI{30}{\ul} SDS Sample Buffer.
+	\item Sofortiges Erhitzen der Problem auf \SI{95}{\celsius} während 5
+		Minuten zwecks Aufbrechen der Mitochondrien.
+
+\end{itemize}
+
+\section{Vorbereitung SDS-Gel}
+
+Durch die Assistentin wurde vorgängig das SDS-Gel vorbereitet, basierend auf
+folgenden Arbeitsschritten aus dem Praktikumsskript \cite{skriptv7}:
+
+\begin{itemize}
+	\item Aufbau der Glasplatten und Spacer wie vorgeführt
+	\item Abdichten mit geschmolzener Agarose
+	\item Mit \ce{\text{dd}H2O} füllen, um zu testen ob der Aufbau dicht ist
+	\item Mische das 12-\% Trenngel in einem \SI{15}{\ml} Falcon Tube:
+		\begin{itemize}
+			\item \SI{4}{\ml} Acrylamid-Bisacrylamid-Lösung (30\%)
+			\item \SI{2.5}{\ml} Trenngelpuffer
+			\item \SI{3.5}{\ml} \ce{\text{dd}H2O}
+		\end{itemize}
+	\item Mische durch mehrmaliges Invertieren des Röhrchens
+	\item Füge \SI{100}{\ul} 10\% APS und \SI{10}{\ul} TEMED hinzu, mische durch
+		Invertieren. Polymerisati-onsmischung unverzüglich bis zu der
+		mit Filzstift markierten Höhe zwischen die Glas-platten giessen
+	\item Überschichte die Polymerisationslösung sofort mit Isopropanol (\SI{1}{\ml})
+	\item Während 20 Minuten polymerisieren lassen
+	\item Isopropanol abgiessen und mit ddH2O spülen
+	\item Mische das 4.5-\% Sammelgel in einem \SI{15}{ml} Falcon Röhrchen:
+		\begin{itemize}
+			\item \SI{0.75}{\ml} Acrylamid-Bisacrylamid-Lösung (30\%)
+			\item \SI{1.25}{\ml} Sammelgelpufer
+			\item \SI{3.0}{\ml} \ce{\text{dd}H2O}
+		\end{itemize}
+	\item Mische durch mehrmaliges Invertieren des Röhrchens.
+	\item Füge \SI{100}{\ul} 10\% APS und \SI{10}{\ul} TEMED hinzu, mische
+		durch Invertieren. Überschichte das Sammelgel sofort mit der
+		Polymerisationsmischung und setze den Kamm ein
+	\item Währen 20 Minuten polymerisieren lassen
+\end{itemize}
+
+\section{Vorbereitung Gelelektrophorese}
+
+Anschliessend wurde die Gelelektrophorese durchgeführt. Hierzu wurde der
+Gel-Tank aufgebaut und befüllt, und folgende Proben in das Gel gegeben:
+\\
+
+\begin{tabu}{ll}
+	\toprule
+	Lane & Probe \\
+	\midrule
+	1 & \SI{15}{\ul} unstained marker \\
+	2 & \SI{20}{\ul} Input \\
+	3 & \SI{30}{\ul} Probe 1 \\
+	4 & \SI{30}{\ul} Probe 2 \\ 
+	5 & \SI{30}{\ul} Probe 3 \\
+	6 & \SI{30}{\ul} Probe 4 \\
+	\bottomrule
+\end{tabu}
+\\
+
+Als unstained marker diente ein Proteingemisch von Proteinen mit bekannter
+Grösse, als Input \SI{2}{\ul} des Substrats in \SI{200}{\ul} SDS Buffer,
+erhitzt auf \SI{95}{\celsius} für 5 Minuten.
+
+Im Anschluss wurde das Gel für 2.5 Stunden bei \SI{35}{\milli\ampere} laufen
+gelassen.
+
+\section{Weiterverarbeitung des Gels}
+
+Im Anschluss wurde das Gel für die Auswertung vorbereitet:
+\begin{itemize}
+	\item Für 15 Minuten in Fixierlösung inkubiert
+	\item Für eine Stunde in Farbstoff Coomassie gegeben
+\end{itemize}
+
+Der Rest der Auswertung wurde durch die Assistentin durchgeführt
+\cite{skriptv7}:
+\begin{itemize}
+	\item Wasche kurz mit \ce{\text{dd}H2O}
+	\item Inkubiere das Gel für 10 Minuten in \ce{\text{dd}H2O}
+	\item Inkubiere das Gel für 15 Minuten in 10\% Glycerol
+	\item Lege das Gel umgedreht auf ein Stück Klarsichtfolie und bedecke
+		es mit einem Stück 
+	\item angefeuchtetem Whatman Filterpapier
+	\item Trockne das Gel auf dem Vakuumtrockner bei \SI{60}{\celsius} für 90 Minuten
+	\item Entferne die Klarsichtfolie
+	\item Markiere den Marker mit kleinen Tropfen aus \SI{1}{\ul}
+		\ce{^{35}S-\text{Met}} in \SI{500}{\ul} 50\% Glycerol. Decke
+		die Tropfen mit Klebeband ab
+	\item Das Gel wird für 12 h einer Phosphoimagerplatte exponiert und am
+		nächsten Morgen mit dem Phosphoimager gescannt
+\end{itemize}
+
 \chapter{Resultate}
+
+\section{Gefärbtes Gel}
+
+Im Coomassie-gefärbten Gel in Abbildung \ref{fig:gel} wurden Proteine durch den
+Farbstoff Coomassie-Blau sichtbar gemacht. Die Konzentration an Proteinen in
+einem Punkt korreliert dabei direkt mit der Intensivität der blauen Farbe.
+
+Bei allen Proben sind unterhalb der \SI{66}{\kilo\dalton} Linie grosse Blobs zu
+sehen. Hierbei wird es sich um BSA handeln, dessen molekulare Masse circa
+\SI{60}{\kilo\dalton} beträgt. ADHIII wird aufgrund dessen Molekulargewicht von
+\SI{40}{\kilo\dalton} unterhalb der \SI{45}{\kilo\dalton} Linie zu liegen
+kommen, was im Autoradiogramm ersichtlich sein wird. Aufgrund der relativ
+kleinen Menge an
+Proteinen ist es im eingefärbten Gel allerdings nicht dominant sichtbar.
+
+\section{Autoradiogramm}
+
+Im Autoradiogramm in Abbildung \ref{fig:gel_rad} sind radioaktive Nukleide als
+schwarze Punkte ersichtlich, wobei die Skala von Weiss nach Schwarz der
+Konzentration der radioaktiven Nukleide in jenem Punkt entspricht.
+
+In der Marker-Spalte sind die verschiedenen radioaktiv markierten
+Marker-Moleküle mit bekannter Grösse sichtbar.
+
+\subsection{Input-Sample}
+
+Beim Input-Sample befindet sich, wie erwartet knapp unter der
+\SI{45}{\kilo\dalton} Linie, das zugegebene, radioaktiv markierte, ADHIII.
+
+\subsection{Probe 1, ohne AVO, ohne Proteinase K}
+
+In der Probe 1 fand, da kein AVO zugegeben wurde, der Proteinimport statt.
+Diesen importierten Proteinen wurde in der mitochondrialen Matrix die
+N-terminale Sequenz abgeschnitten, die Proteine also kleiner. Da zusätzlich
+keine Proteinase K zugegeben wurde, blieben die Proteine, welche nicht
+importiert wurden, erhalten. Aufgrund des Grössenunterschiedes verursacht durch
+die N-Terminale Sequenz ergeben sich so zwei Banden von Proteinen mit leicht
+unterschiedlicher Grösse.
+
+\subsection{Probe 2, mit AVO, ohne Proteinase K}
+
+In der Probe 2 fand aufgrund des zugegebenen AVO kein Proteinimport statt. Da
+weiterhin keine Proteinase zugegeben wurde blieben das extrazelluläre ADHIII
+erhalten, und befindet sich erwartungsgemäss auf einer Linie mit dem
+extrazellulären ADHIII der Probe 1.
+
+\subsection{Probe 3, ohne AVO, mit Proteinase K}
+
+In der Probe 3 wurden Proteine aufgrund nicht vorhandenem AVO importiert, und
+nicht importierte Proteine durch die zugegebene Proteinase K abgebaut. Dies
+führt zu einer Bande, deren Position bestätigt dass es sich um ADHIII ohne
+N-terminale Sequenz handelt. Diese Bande ist allerdings schwacher als die
+entsprechende Bande der Probe 1, was daher stammen mag, dass die Proteinase K
+entweder gewisse der Mitochondrien abbaute, oder die zugegebene Menge von PMSF
+nicht ausreichend war, um alle Proteinase K zu inaktivieren, und somit nach
+Aufbrechen der Mitochondrien gewisse der importierten Proteine abgebaut wurden.
+
+\subsection{Probe 4, mit AVO, mit Proteinase K}
+
+In der Probe 4 fand aufgrund des zugegebenen AVO kein Import statt, und
+aufgrund der Proteinase K wurden extrazelluläre Proteine abgebaut. Die schwache
+Bande auf Höhe des originalen ADHIII mit N-terminaler Sequenz stammt daher,
+dass AVO lediglich den zweiten Schritt der Importreaktion - vom
+Intermembranraum in das Zellinnere - inhibiert. Der erste Schritt - wie in der
+Theorie erwähnt - findet passiv, vermittelt durch die Ladung der N-terminalen
+Gruppe und des TOM Komplexes, ohne Verbrauch von ATP, statt. Dies führt dazu,
+dass eine kleine Menge des ADHIII in den Intermembranraum importiert wurde, und
+dort durch die Membran des Mitochondrium von der Proteinase K geschützt war.
+
+\subsection{Unsaubere Banden}
+
+Allen Banden ist gemein, dass sie nicht gerade, sondern vielmehr gebogen sind.
+Die Ursache hierfür ist unklar. Da diese Bögen aber lediglich bei zwei von drei
+Gruppen vorhanden sind, wird es vermutlich nicht am Gel liegen. Weiter deuten
+die von Probe zu Probe verschiedenen Bögen darauf hin, dass das Problem auch
+nicht am Spannungsgerät liegt.
+
+Potentiell wurde bei der Zugabe der Proben in die Taschen des Gels nicht sauber
+gearbeitet, und gewisse Taschen verletzt, oder die Proben zu tief eingespritzt.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/gel.png}
+	\caption{Gefärbtes SDS-Gel}
+	\label{fig:gel}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/gel_rad.png}
+	\caption{Autoradiogramm des SDS-Gel}
+	\label{fig:gel_rad}
+\end{figure}
 
 \bibliographystyle{plain}
 \bibliography{references}
