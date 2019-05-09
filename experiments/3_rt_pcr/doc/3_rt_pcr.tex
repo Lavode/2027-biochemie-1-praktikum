@@ -1,0 +1,223 @@
+\documentclass[a4paper,german]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\rpm{\textsc{rpm}}
+
+% Chemistry
+\usepackage{mhchem}
+
+% Subfigures & captions
+\usepackage{subcaption}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Praktikum Biochemie 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Praktikum Biochemie 1}
+\title{3 - Real-time quantitative PCR}
+
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Group 14}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Introduction}
+
+\chapter{Protocol}
+
+\section{Sample preparation}
+
+A cell suspension was prepared ahead of time, containing $2.5 \cdot 10^5$ cells
+per \SI{180}{\ul}. A dilution of neuraminidase in glycobuffer was created, with
+a concentration of \SI{0.5}{U \per \ul}.
+
+Then, four samples were prepared according to the following table.
+\\
+
+\begin{tabu}{lllll}
+	\toprule
+	Sample & N-1 & N-2 & N+1 & N+2 \\
+	\midrule
+	Cell suspension & \SI{180}{\ul} & \SI{180}{\ul} & \SI{180}{\ul} & \SI{180}{\ul} \\
+	Neuraminidase dilution & \SI{0}{\ul} & \SI{0}{\ul} & \SI{20}{\ul} & \SI{20}{\ul} \\
+	Glycobuffer & \SI{20}{\ul} & \SI{20}{\ul} & \SI{0}{\ul} & \SI{0}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+The four samples were mixed on a vortexer, and incubated for \SI{30}{\minute}
+at \SI{37}{\celsius}, to facilitate activity of the neuraminidase.
+
+\section{Virus internalisation}
+
+\SI{10}{\ul} of a MVM-infected supernatant, with a concentration of $10^7$
+virions per \si{\ul}, were added to all samples. The samples were then mixed on
+a vortexer, and incubated for \SI{1}{\hour} at \SI{37}{\celsius}.
+
+\section{Washing the samples}
+
+In order to remove excess virus, the samples were washed thrice. During each
+cycle they were first centrifuged at \SI{3000}{g} for \SI{3}{\min}, the
+supernatant then discarded and the pellets resuspended in \SI{900}{\ul} ice-cold
+PBS. After the final washing cycle, the supernatant was removed.
+
+\section{Lysis with Chelex}
+
+Through rapid pipetting, a provided chelex suspension of \SI{100}{\mg \per \ml}
+was homogenized, and \SI{500}{\ul} transferred to a separate tube. This
+solution was homogenized once more, and \SI{100}{\ul} were added to each
+sample. The samples were vortexed, and incubated for \SI{10}{\min} at
+\SI{95}{\celsius}, while shaking at \SI{400}{\rpm}.
+
+Afterwards the samples were cooled down to prevent vapor build-up, vortexed
+once more, and centrifuged for \SI{1}{\min} at \SI{15000}{\rpm}.
+
+\SI{25}{\ul} of the supernatant, containing the DNA, was added to a separate
+tube.
+
+\section{Preparation of qPRC master-mix}
+
+Two types of qPRC master-mix were prepared. The first one contained iTaq-mix,
+forward primer and reverse primer, the second one was identical except it did
+not contain reverse primer.
+
+Composition of the first primer:
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Component & Fractions & Volume \\
+	\midrule
+	iTaq mix & 16 & \SI{112}{\ul} \\
+	Forward primer MVM-F & 1 & \SI{7}{\ul} \\
+	Reverse primer MVM-R-489 & 1 & \SI{7}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Composition of the second primer:
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Component & Fractions & Volume \\
+	\midrule
+	iTaq mix & 16 & \SI{112}{\ul} \\
+	Forward primer MVM-F & 1 & \SI{7}{\ul} \\
+	\bottomrule
+\end{tabu}
+
+\section{Preparation of PCR samples}
+
+\SI{18}{\ul} of the first master-mix were added to five wells. Afterwards the
+four samples, plus pure \ce{H2O} as a negative control, were added to these
+wells.
+
+\SI{17}{\ul} each of the second master-mix were added to six additional wells.
+\SI{1}{\ul} of different reverse primers were added, with MVM-R-72 being added
+to wells 6 and 7, MVM-R-432 to wells 8 and 9, and MVM-R-1037 to wells 10 and
+11. Afterwards \SI{2}{\ul} of the samples without neuraminidase were added to
+those wells, with sample 1 being added to wells 6, 8, 10, and sample 2 being
+added to wells 7, 9 and 11.
+
+In summary, the following wells were prepared:
+\\
+
+\begin{tabu}{lccccccccccc}
+	\toprule
+	Well & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+	\midrule 
+	iTaq Mix & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} & \SI{16}{\ul} \\
+	MVM-F & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} \\
+	MVM-R-489 & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} & \SI{1}{\ul} &  &  &  &  &  &  \\
+	MVM-R-72 & & & & & & \SI{1}{\ul} & \SI{1}{\ul} & & & & \\
+	MVM-R-432 & & & & & & & & \SI{1}{\ul} & \SI{1}{\ul} & & \\
+	MVM-R-1037 & & & & & & & & & & \SI{1}{\ul} & \SI{1}{\ul} \\
+	N$+$ 1 & \SI{2}{\ul} & & & & & & & & & & \\
+	N$+$ 2 & & \SI{2}{\ul} & & & & & & & & & \\
+	N$-$ 1 & & & \SI{2}{\ul} & & & \SI{2}{\ul} & & \SI{2}{\ul} & & \SI{2}{\ul} & \\
+	N$-$ 2 & & & & \SI{2}{\ul} & & & \SI{2}{\ul} & & \SI{2}{\ul} & & \SI{2}{\ul} \\
+	\ce{H2O} & & & & & \SI{2}{\ul} & & & & & & \\
+	\bottomrule
+\end{tabu}
+
+\chapter{Results \& discussion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
