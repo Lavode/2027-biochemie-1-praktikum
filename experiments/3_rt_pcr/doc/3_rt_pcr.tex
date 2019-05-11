@@ -1,4 +1,4 @@
-\documentclass[a4paper,german]{scrreprt}
+\documentclass[a4paper,english]{scrreprt}
 
 % Uncomment to optimize for double-sided printing.
 % \KOMAoptions{twoside}
@@ -7,7 +7,7 @@
 % \KOMAoptions{BCOR=2cm}
 
 % Localization options
-\usepackage[german]{babel}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -60,6 +60,7 @@
 
 % Subfigures & captions
 \usepackage{subcaption}
+\usepackage{wrapfig}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
@@ -99,6 +100,10 @@
 
 \chapter{Protocol}
 
+The experiment was done based on the provided protocol \cite{skriptv3}. The
+following will list any relevant steps taken by us, including potential
+deviations from the protocol.
+
 \section{Sample preparation}
 
 A cell suspension was prepared ahead of time, containing $2.5 \cdot 10^5$ cells
@@ -135,6 +140,10 @@ cycle they were first centrifuged at \SI{3000}{g} for \SI{3}{\min}, the
 supernatant then discarded and the pellets resuspended in \SI{900}{\ul} ice-cold
 PBS. After the final washing cycle, the supernatant was removed.
 
+After the second centrifugation sample N$-$2 was accidentally resuspended in
+its supernatant, so had to undergo an additional centrifugation to restore the
+pellet and prevent loss of cells.
+
 \section{Lysis with Chelex}
 
 Through rapid pipetting, a provided chelex suspension of \SI{100}{\mg \per \ml}
@@ -143,17 +152,20 @@ solution was homogenized once more, and \SI{100}{\ul} were added to each
 sample. The samples were vortexed, and incubated for \SI{10}{\min} at
 \SI{95}{\celsius}, while shaking at \SI{400}{\rpm}.
 
+During this step, sample N$+$2 accidentally had \SI{400}{\ul} instead of
+\SI{100}{\ul} of Chelex added, so a higher dilution is expected.
+
 Afterwards the samples were cooled down to prevent vapor build-up, vortexed
 once more, and centrifuged for \SI{1}{\min} at \SI{15000}{\rpm}.
 
-\SI{25}{\ul} of the supernatant, containing the DNA, was added to a separate
-tube.
+\SI{25}{\ul} of each sample's supernatant, containing the DNA, was added to a
+separate tube, to be used in the following qPCR.
 
 \section{Preparation of qPRC master-mix}
 
 Two types of qPRC master-mix were prepared. The first one contained iTaq-mix,
-forward primer and reverse primer, the second one was identical except it did
-not contain reverse primer.
+forward primer and reverse primer, the second one was identical except for no
+added reverse primer.
 
 Composition of the first primer:
 \\
@@ -214,10 +226,269 @@ In summary, the following wells were prepared:
 	\ce{H2O} & & & & & \SI{2}{\ul} & & & & & & \\
 	\bottomrule
 \end{tabu}
+\\
+
+The second group also prepared four wells with known standards, containing
+$10^7, 10^6, 10^5$ and $10^4$ plasmides of the MVM genome in the first
+master-mix respectively.
+
+\section{qPCR}
+
+The various wells subsequently underwent 40 PCR cycles, optimized for the
+reverse primer MVM-R-1037, followed by a melting curve analysis.
+
+\begin{itemize}
+	\item Hot start, \SI{95}{\celsius}, \SI{5}{\min}
+	\item 40 PCR cycles
+		\begin{itemize}
+			\item Denaturation, \SI{95}{\celsius}, \SI{15}{\s}
+			\item Annealing , \SI{61}{\celsius}, \SI{15}{\s}
+			\item Extension, \SI{72}{\celsius}, \SI{15}{\s}
+		\end{itemize}
+	\item End, \SI{95}{\celsius}, \SI{1}{\min}
+	\item Melting curve, \SIrange{65}{95}{\celsius}, \SI{10}{\s \per \celsius}
+\end{itemize}
+
+During qPCR, fluoroescence of the added dye was measured, and stored for
+further analysis.
 
 \chapter{Results \& discussion}
 
-\bibliographystyle{plain}
+\section{qPCR results}
+
+The following starting quantities were calculated as part of the qPCR. N$+$ are
+samples with, N$-$ without neuraminidase.
+
+\subsection{Own results}
+
+Figure \ref{fig:sq_14} shows values based on the samples prepared by our group.
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	& N$+$ & N$-$ \\
+	\midrule
+	Sample 1 & 139884 & 146774 \\
+	Sample 2 & 135924 & 428253 \\
+	Mean & 137904 & 287514 \\
+	Stdev & 2800 & 199035 \\
+	\bottomrule
+\end{tabu}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/sq_group14.png}
+	\caption{Results group 14}
+	\label{fig:sq_14}
+\end{figure}
+
+\subsection{Results of different group}
+
+Figure \ref{fig:sq_xx} shows values based on the samples prepared by another
+group, for the sake of comparison in the following discussion.
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	& N$+$ & N$-$ \\
+	\midrule
+	Sample 1 & 60200 & 488000 \\
+	Sample 2 & 66300 & 630000 \\
+	Mean & 63250 &  559000 \\
+	Stdev & 4313 & 100409 \\
+	\bottomrule
+\end{tabu}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/sq_groupxx.png}
+	\caption{Results external group}
+	\label{fig:sq_xx}
+\end{figure}
+
+\subsection{Multiplicity of infection}
+
+Each of our \SI{200}{\ul} samples contained \SI{180}{\ul} cell suspension, with
+a concentration of $2.5 \cdot 10^5$ cells per \SI{180}{\ul}. To each we added
+\SI{10}{\ul} MVM-infected supernatant, with a concentration of $10^7$ virions
+per \si{\ul}.
+
+Hence each sample contains $\SI{10}{\ul} \cdot 10^7 \si{virions \per \ul} =
+10^8 \si{virions}$, and $\SI{180}{\ul} \cdot 2.5 \cdot 10^5 \si{cells \per 180 \ul}
+= 2.5 \cdot 10^5 \si{cells}$, for a MOI of:
+
+\[
+	\text{MOI} = \frac{10^8 \si{virions}}{2.5 \cdot 10^5 \si{cells}} = \SI{400}{virions \per cell}
+\]
+
+\section{Expected vs actual qPCR measurements}
+
+The goal of the experiment was to verify that the MVM virus uses sialicic acid
+as a cell receptor for the purpose of internalisation. As neuraminidase will
+cleave the sialic acid groups of cells, we expected treated samples to have a
+significantly lower concentration of viral DNA.
+
+\subsection{Viral DNA in untreated samples}
+
+While the measured averages do confirm this, the high standard deviation of the
+untreated samples inspires little confidence that this is anything more than
+chance. When comparing our results with the external results in figure
+\ref{fig:sq_xx}, it becomes clear that the high standard deviation is likely
+the result of a mistake, or inaccuracies, in the experiment's execution.
+
+It is possible that not all samples were washed equally well, such that one of
+the two had high concentrations of external viruses left over. This would also
+fit well with the higher than expected concentration of viral DNA in the
+treated sample, where no internalisation should have occurred.
+
+\subsection{Viral DNA in treated samples}
+
+The high concentration of viral DNA in the treated samples might be the result
+of the too short incubation time after having added the neuraminidase. Due to
+the high number of sialic acid receptors, thirty minutes might not have been
+enough to cleave all receptors, allowing some viral DNA to enter the treated
+cells.
+
+Interestingly enough there is also no significant difference between the two
+treated samples, in spite of N$+$-2 being three times as diluted as N$+$-1.
+
+\section{Matching reverse primer sequences with fragment lengths}
+
+NCBI BLAST \cite{website:blast} was used to find the locations of the forward
+and reverse primers in the MVM genome. This lead to the positions shown in
+figure \ref{fig:primer_locations}, as well as the following table.
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Sequence & Start & End \\
+	\midrule
+	Forward: 5’-TTC ATT CTG TGA GTC GAG ACG CAC-3’ & 214 & 237 \\
+	1: 5’-TGC CTT CTC CAC CAT TTC CCT TGA-3’ & 680 & 703 \\
+	2: 5’-CAT CAG AGT AAG CAT TTC CAG-3’ & 265 & 285 \\
+	3: 5’-ACA AAT CTC TAG CGT ATT TTT-3’ & 1230 & 1250 \\
+	4: 5’-CGC AGT GCC AGC CTT GGT CTT TTC-3’ & 622 & 644 \\
+	\bottomrule
+\end{tabu}
+\\
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.475\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/primer_forward.png}
+		\caption{Forward primer}
+		\label{fig:primer_forward}
+	\end{subfigure}%
+	\vskip\baselineskip
+	\begin{subfigure}{.475\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/primer_1.png}
+		\caption{Reverse primer 1}
+		\label{fig:primer_1}
+	\end{subfigure}%
+	\begin{subfigure}{.475\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/primer_2.png}
+		\caption{Reverse primer 2}
+		\label{fig:primer_2}
+	\end{subfigure}
+	\vskip\baselineskip
+	\begin{subfigure}{.475\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/primer_3.png}
+		\caption{Reverse primer 3}
+		\label{fig:primer_3}
+	\end{subfigure}%
+	\begin{subfigure}{.475\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/primer_4.png}
+		\caption{Reverse primer 4}
+		\label{fig:primer_4}
+	\end{subfigure}
+	\caption{Location of primers in MVM genome}
+	\label{fig:primer_locations}
+\end{figure}
+
+Noteworthy is that for sequence 4 only 23 of the 24 nucleotides matched, with
+the first C not being part of the MVM genome. This might be a typo in the
+protocol, or a primer which does not fit perfectly.
+
+Ordering them by position in the genome in ascending order, and calculating the
+length of the fragment - starting at the beginning of the forward primer and
+ending at the end of the reverse primer, allows associating the reverse primer
+sequences 1 through 4 with the used reverse primers:
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Reverse primer & Sequence number & Fragment length \\
+	\midrule
+	MVM-R-72 & 2 & $285 - 214 + 1 = 72$ \\
+	MVM-R-432 & 4 & $644 - 214 + 1 = 431$ \\
+	MVM-R-489 & 1 & $703 - 214 + 1 = 490$ \\
+	MVM-R-1037 & 3 & $1250 - 214 + 1 = 1037$ \\
+	\bottomrule
+\end{tabu}
+\\
+
+\section{Primer comparison}
+
+\subsection{Melting curves}
+
+As the melting temperature of a replicated fragment - that is the temperature
+at which the double-strand splits into two single strands - depends on the
+strength of the non-covalent bonds within the fragment, bigger fragments - with
+more non-covalent bonds - are expected to have a higher melt point.
+
+This is visible in figure \ref{fig:melting_curves}, where the melt points are
+in ascending order of fragment length, with fragments synthesized with the
+MVM-R-72 primer melting first, followed by MVM-R-432, MVM-R-489 and lastly
+MVM-R-1037.
+
+It is visible that the effect is not linear, with fragments melting no matter
+their length past \SI{85}{\celsius}.
+
+\subsection{Amplification}
+
+In figure \ref{fig:amplification} DNA amplification over time for the various
+primers is shown. As the utilized PCR was optimized for MVM-R-489, these
+samples were expected to be amplified the fastest, and plateau at the highest
+niveau, which is clearly visible in the graph.
+
+The next fastest amplification was of samples with MVM-R-72. This is likely due
+to those fragments' small size, allowing them to be amplified with decent speed
+even under non-optimal conditions. After that MVM-R-1037 follows, whose
+fragments were likely too long to reliably extend during the utilized cycle
+times, and whose amplification was so hindered.
+
+Of interest is the primer MVM-R-432 which seems to have been significantly less
+amplified than the others. While amplification levels less than those of
+MVM-R-489 are to be expected, due to its size it should be amplified more
+heavily than those samples with MVM-R-1037.
+
+One theory is that the fluorescent dye is not able to bind to the produced
+fragments all too well, such that, even if a lot of fragments are produced,
+only few are measured. A proper explanation for this behaviour is missing,
+though, as the produce fragments of MVM-R-489 and MVM-R-432 contain comparable
+quantities of AT respectively CG pairs to which the dye would bind.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/melting_curves.png}
+	\caption{Melting curves}
+	\label{fig:melting_curves}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/amplification.png}
+	\caption{Amplification}
+	\label{fig:amplification}
+\end{figure}
+
+
+\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}
