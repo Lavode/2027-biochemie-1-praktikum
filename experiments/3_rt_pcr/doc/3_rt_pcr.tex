@@ -153,13 +153,13 @@ pellet and prevent loss of cells.
 
 \section{Lysis with Chelex}
 
-Through rapid pipetting, a provided Chelex suspension of \SI{100}{\mg \per \ml}
+Through rapid pipetting a provided Chelex suspension of \SI{100}{\mg \per \ml}
 was homogenized, and \SI{500}{\ul} transferred to a separate tube. This
-solution was homogenized once more, and \SI{100}{\ul} were added to each
-sample. The samples were vortexed, and incubated for \SI{10}{\min} at
+solution was homogenized once more and \SI{100}{\ul} were added to each
+sample. The samples were vortexed and incubated for \SI{10}{\min} at
 \SI{95}{\celsius}, while shaking at \SI{400}{\rpm}.
 
-During this step, sample N$+$2 accidentally had \SI{400}{\ul} instead of
+During this step sample N$+$2 accidentally had \SI{400}{\ul} instead of
 \SI{100}{\ul} of Chelex added, so a higher dilution is expected.
 
 Afterwards the samples were cooled down to prevent vapor build-up, vortexed
@@ -174,7 +174,7 @@ Two types of qPRC master-mix were prepared. The first one contained iTaq-mix,
 forward primer and reverse primer, the second one was identical except for no
 added reverse primer.
 
-Composition of the first primer:
+Composition of the first master-mix:
 \\
 
 \begin{tabu}{lll}
@@ -188,7 +188,7 @@ Composition of the first primer:
 \end{tabu}
 \\
 
-Composition of the second primer:
+Composition of the second master-mix:
 \\
 
 \begin{tabu}{lll}
@@ -242,7 +242,7 @@ master-mix respectively.
 \section{qPCR}
 
 The various wells subsequently underwent 40 PCR cycles, optimized for the
-reverse primer MVM-R-1037, followed by a melting curve analysis.
+reverse primer MVM-R-489, followed by a melting curve analysis.
 
 \begin{itemize}
 	\item Hot start, \SI{95}{\celsius}, \SI{5}{\min}
@@ -453,8 +453,8 @@ in ascending order of fragment length, with fragments synthesized with the
 MVM-R-72 primer melting first, followed by MVM-R-432, MVM-R-489 and lastly
 MVM-R-1037.
 
-It is visible that the effect is not linear, with fragments melting no matter
-their length past \SI{85}{\celsius}.
+It is visible that the effect is not linear, with fragments melting, no matter
+their length, once temperature reaches \SI{85}{\celsius}.
 
 \subsection{Amplification}
 
@@ -469,10 +469,11 @@ even under non-optimal conditions. After that MVM-R-1037 follows, whose
 fragments were likely too long to reliably extend during the utilized cycle
 times, and whose amplification was so hindered.
 
-Of interest is the primer MVM-R-432 which seems to have been significantly less
-amplified than the others. While amplification levels less than those of
-MVM-R-489 are to be expected, due to its size it should be amplified more
-heavily than those samples with MVM-R-1037.
+Of interest are fragments produced with the reverse primer MVM-R-432, which
+seem to have been significantly less amplified than the others. While
+amplification levels less than those of MVM-R-489 are to be expected, they
+should have been amplified more heavily than those samples with MVM-R-1037 due
+to their smaller size.
 
 One theory is that the fluorescent dye is not able to bind to the produced
 fragments all too well, such that, even if a lot of fragments are produced,
