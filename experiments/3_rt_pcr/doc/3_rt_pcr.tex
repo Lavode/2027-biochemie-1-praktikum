@@ -74,14 +74,14 @@
 \usepackage{listings}
 
 % Convenience commands
-\newcommand{\mailsubject}{2027 - Praktikum Biochemie 1}
+\newcommand{\mailsubject}{2027 - Lab course biochemistry 11}
 \newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
                                {#1}}
 
 % Should use this command wherever the print date is mentioned.
 \newcommand{\printdate}{\today}
 
-\subject{2027 - Praktikum Biochemie 1}
+\subject{2027 - Lab course biochemistry 1}
 \title{3 - Real-time quantitative PCR}
 
 \author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Group 14}
@@ -97,6 +97,13 @@
 \maketitle
 
 \chapter{Introduction}
+
+The goal of this experiment was to analyze the role of sialic acid cell
+receptors on the internalization of MVM viruses into mouse fibroplasts.
+
+To do this, some cell samples were treated with neuraminidase to cleave those
+receptors and subsequently exposed to the MVM virus. Using qPCR the viral DNA
+was amplified, and its initial quantity in treated and untreated cells compared.
 
 \chapter{Protocol}
 
@@ -146,7 +153,7 @@ pellet and prevent loss of cells.
 
 \section{Lysis with Chelex}
 
-Through rapid pipetting, a provided chelex suspension of \SI{100}{\mg \per \ml}
+Through rapid pipetting, a provided Chelex suspension of \SI{100}{\mg \per \ml}
 was homogenized, and \SI{500}{\ul} transferred to a separate tube. This
 solution was homogenized once more, and \SI{100}{\ul} were added to each
 sample. The samples were vortexed, and incubated for \SI{10}{\min} at
@@ -161,7 +168,7 @@ once more, and centrifuged for \SI{1}{\min} at \SI{15000}{\rpm}.
 \SI{25}{\ul} of each sample's supernatant, containing the DNA, was added to a
 separate tube, to be used in the following qPCR.
 
-\section{Preparation of qPRC master-mix}
+\section{Preparation of qPCR master-mix}
 
 Two types of qPRC master-mix were prepared. The first one contained iTaq-mix,
 forward primer and reverse primer, the second one was identical except for no
@@ -249,7 +256,7 @@ reverse primer MVM-R-1037, followed by a melting curve analysis.
 	\item Melting curve, \SIrange{65}{95}{\celsius}, \SI{10}{\s \per \celsius}
 \end{itemize}
 
-During qPCR, fluoroescence of the added dye was measured, and stored for
+During qPCR, fluorescence of the added dye was measured, and stored for
 further analysis.
 
 \chapter{Results \& discussion}
@@ -323,7 +330,7 @@ Hence each sample contains $\SI{10}{\ul} \cdot 10^7 \si{virions \per \ul} =
 
 \section{Expected vs actual qPCR measurements}
 
-The goal of the experiment was to verify that the MVM virus uses sialicic acid
+The goal of the experiment was to verify that the MVM virus uses sialic acid
 as a cell receptor for the purpose of internalisation. As neuraminidase will
 cleave the sialic acid groups of cells, we expected treated samples to have a
 significantly lower concentration of viral DNA.
@@ -454,7 +461,7 @@ their length past \SI{85}{\celsius}.
 In figure \ref{fig:amplification} DNA amplification over time for the various
 primers is shown. As the utilized PCR was optimized for MVM-R-489, these
 samples were expected to be amplified the fastest, and plateau at the highest
-niveau, which is clearly visible in the graph.
+level, which is clearly visible in the graph.
 
 The next fastest amplification was of samples with MVM-R-72. This is likely due
 to those fragments' small size, allowing them to be amplified with decent speed
@@ -469,9 +476,9 @@ heavily than those samples with MVM-R-1037.
 
 One theory is that the fluorescent dye is not able to bind to the produced
 fragments all too well, such that, even if a lot of fragments are produced,
-only few are measured. A proper explanation for this behaviour is missing,
-though, as the produce fragments of MVM-R-489 and MVM-R-432 contain comparable
-quantities of AT respectively CG pairs to which the dye would bind.
+only few are measured. This is not very convincing however, as the fragments
+produced with MVM-R-489 seem to bind the dye well, and have a lot of overlap
+with the ones of MVM-R-432.
 
 \begin{figure}
 	\centering
