@@ -1,0 +1,39 @@
+KRAS
+  MISSENSE
+
+  DNA: 227 G>T
+  Prot: G12V
+
+
+TP53
+  DELETION
+  DNA: Nucleotides 673 - 993 del
+  Prot: Amino acids 225 - 331 del
+  
+  https://www.uniprot.org/uniprot/P04637
+  https://en.wikipedia.org/wiki/P53#Structure
+
+  Loss of:
+    - Parts of central DNA-binding domain
+    - Full Nuclear localization signaling domain (responsible for nucleus import)
+    - Parts of homo-oligomerisation domain, responsible for activity in vivo
+
+  => Severe (if not full) inactivation, loss of tumor-surpressant
+
+BRCA1
+  MISSENSE
+
+  https://www.uniprot.org/uniprot/P38398#pathology_and_biotech
+  DNA: 5324 T > G
+  Prot: M 1775 R    
+    "alters protein stability and abolishes ACACA and BRIP1 binding" (https://www.uniprot.org/uniprot/P38398#pathology_and_biotech)
+    "Change from medium size and hydrophobic (M) to large size and basic (R)" (https://web.expasy.org/variant_pages/VAR_007799.html)
+
+ABL1
+  INSERT, DELETE -> Frameshift
+  ... -> Missense  
+
+  Region of conservative and regular substitutions
+  Prot: 278 - 298,
+  HGG GRVPERSCSH ERDQTPY  to
+  MEV EEFLKEAAVM KEIKHPN
