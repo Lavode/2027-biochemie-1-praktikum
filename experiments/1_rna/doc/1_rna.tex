@@ -1,0 +1,171 @@
+\documentclass[a4paper,english]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\rpm{\textsc{rpm}}
+
+% Chemistry
+\usepackage{mhchem}
+
+% Subfigures & captions
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Lab course biochemistry 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Lab course biochemistry 1}
+\title{1 - Prozessierung der pre-tRNA mit RNAse P Ribozym}
+
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Group 14}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Einleitung}
+
+Ziel des Experimentes war die Unterschung der Prozessierung von pre-tRNA durch
+RNAse P unter verschiedenen Bedingungen.
+
+Hierzu wurden pre-tRNA und RNAse P in-vivo transkribiert, unter verschiedenen
+Bedingungen zusammengegeben, und die Resultierenden Mischungen in einer
+Gelelektrophorese analysiert.
+
+\section{Theorie}
+
+\subsection{Katalysierung durch RNA Enzyme}
+
+RNA Enzyme verwenden die gleichen drei Mechanismen um Reaktionen zu
+katalysieren die auch Protein-Enzyme verwenden. Dies sind Säure/Base
+katalysierte Reaktionen in denen Komponenten der Reaktion (de)protoniert
+werden, die elektrostatische Stabilisierung von Zwischenprodukten der Reaktion,
+und die Katalyse via optimale Positionierung der an der Reaktion beteiligten
+Gruppen.
+
+\subsection{Prozessierung der pre-tRNA durch RNAse}
+
+RNAse P spielt eine wichtige Rolle in der Reifung der tRNAs. Sie katalysiert
+durch Hydrolyse die Abspaltung eines 5'-Endes einer Vorläuferform der tRNA. Das
+3'-Ende wird im Anschluss, je nach Organsimus, durch weitere RNAsen ebenfalls
+abgespalten.
+
+\chapter{Methoden}
+
+\section{In vitro transkription von pre-tRNA \& RNAse P}
+
+In einer in vitro Transkription wurden pre-tRNA beziehungsweise RNAse P
+basierend auf EcoRI linearisierten Plasmiden hergestellt. Hierzu wurden
+linearisierten Plasmide, Oligonucleotide und eine Polymerase inkubiert, und
+anschliessend aufgereinigt.
+
+\section{Elektrophorensen}
+
+Zwecks Kontrolle der Transkriptionsreaktion, sowie Analyse der RNAse P
+Aktivität unter verschiedenen Bedingungen, wurden zwei Gelelektrophorsen
+durchgeführt.
+
+Zum Nachweis der Produkte der Transkriptionsreaktion diente ein
+\SI{1.5}{\percent} Agarose-Gel. Dieses relativ grobporige Gel erlaubte eine
+rasche Überprüfung der Transkriptionsresultate, in welchen nur Plasmide,
+pre-tRNA, und RNAse P erwartet wurden.
+
+Zur Analyse der RNAse P Aktivität diente ein feinporigeres \SI{8}{\percent}
+Polyacrylamid-Ureal Gel. Die denaturierende Eigenschaft von Urea stellte sicher
+dass die wandernden Moleküle eine gleichmässige Ladungsverteilung besassen,
+sodass sie nur basierend auf ihrer Grösse aufgetrent wurden.
+
+\section{Protokoll}
+
+
+
+\chapter{Resultate}
+
+% Messungen, Berechnungen, Resultate
+
+\chapter{Diskussion}
+
+% Evaluiere / bewerte Ziel
+% Diskutiere Kontroll-Experimente
+% Fragen aus Skript
+% Fehlerquellen etc
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
