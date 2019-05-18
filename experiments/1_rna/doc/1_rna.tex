@@ -98,7 +98,7 @@
 
 \chapter{Einleitung}
 
-Ziel des Experimentes war die Unterschung der Prozessierung von pre-tRNA durch
+Ziel des Experimentes war die Untersuchung der Prozessierung von pre-tRNA durch
 RNAse P unter verschiedenen Bedingungen.
 
 Hierzu wurden pre-tRNA und RNAse P in-vivo transkribiert, unter verschiedenen
@@ -121,7 +121,9 @@ Gruppen.
 RNAse P spielt eine wichtige Rolle in der Reifung der tRNAs. Sie katalysiert
 durch Hydrolyse die Abspaltung eines 5'-Endes einer Vorläuferform der tRNA. Das
 3'-Ende wird im Anschluss, je nach Organsimus, durch weitere RNAsen ebenfalls
-abgespalten.
+abgespalten. Der erste, hier untersuchte, Schritt resultiert in einer
+Aufteilung der 93bp langen pre-tRNA in ein 75bp langes Produkt, und einen 18bp
+langen Abschnitt.
 
 \chapter{Methoden}
 
@@ -146,26 +148,335 @@ pre-tRNA, und RNAse P erwartet wurden.
 Zur Analyse der RNAse P Aktivität diente ein feinporigeres \SI{8}{\percent}
 Polyacrylamid-Ureal Gel. Die denaturierende Eigenschaft von Urea stellte sicher
 dass die wandernden Moleküle eine gleichmässige Ladungsverteilung besassen,
-sodass sie nur basierend auf ihrer Grösse aufgetrent wurden.
+sodass sie nur basierend auf ihrer Grösse aufgetrent wurden. Zwecks Einfärbung
+der Fragmente diente Ethidiumdibromid. Anzumerken ist, dass Entidiumdibromid an
+das abgeschnittene 5'-Ende zu wenig gut binden kann als dass es im Gel sichtbar
+wäre.
 
-\section{Protokoll}
+\section{Protokoll\cite{skriptv1}}
 
+\subsection{In vitro Transkription von pre-tRNA}
 
+Herstellung einer Transkriptions-Mischung:
+\\
+
+\begin{tabu}{ll}
+	\toprule
+	Stoff & Menge \\
+	\midrule
+	EcoRI linearisiertes tRNA Plasmid \SI{573}{\ng \per \ul} & \SI{1.745}{\ul} \\
+	rNTP Mix (ATP, GTP, UTP, CTP), je \SI{25}{\milli\Molar} & \SI{15}{\ul} \\
+	10x TC-Buffer & \SI{10}{\ul} \\
+	\ce{H2O} & \SI{70.755}{\ul} \\
+	RNasin Plus RNAse Inhibitor 5U & \SI{1}{\ul} \\
+	T7-RNA Polymerase & \SI{1.5}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Anschliessend Inkubation für \SI{3.5}{\hour} bei \SI{37}{\celsius}.
+
+\subsection{In vitro Transkription von RNAse P}
+
+Analog vorherigem Absatz durch zweite Gruppe hergestellt.
+
+\subsection{Herstellung \SI{1.5}{\percent} Agarose-Gel}
+
+\SI{1.5}{\percent} Agarose-Lösung in 1x TAE mit \SI{0.4}{\ug \per \ml}
+\ce{EtBr} wurde in der Mikrowelle geschmolzen, und in die vorbereitete
+Gelelektrophorse-Kammer gegossen.
+
+Nach Polymerisierung des Gels wurde es zwecks Haltbarkeit mit 1x TAE
+übergossen.
+
+\subsection{Kontrolle der Transkription}
+
+\SI{5}{\ul} des Transkriptionsresultates wurde mit \SI{5}{\ul} 2x RNA loading
+dye gemischt und bei \SI{95}{\celsius} für \SI{2}{\min} inkubiert.
+
+Die kompletten \SI{10}{\ul} wurden zusammen mit 5S rRNA als Grössenmarker auf
+das Agarose-Gel geladen, und bei \SI{50}{\volt} für \SI{45}{\min} laufen
+gelassen. Das resultierende Gel wurde unter UV Licht betrachtet.
+
+Zum Rest der Transkriptionsreaktion wurde \SI{5}{\ul} \SI{1}{U \per \ul} DNAse
+I gegeben und bei \SI{37}{\celsius} für ca \SI{45}{\min} inkubiert. Geplant war
+eine Inkubationsdauer von \SI{15}{\min}, der Zeitpunkt der Entnahme wurde aber
+verpasst.
+
+\subsection{RNAse P Prozessierungsreaktionen}
+
+\subsubsection{Inhibition mit Neomycin B}
+
+Für die Reaktionsserien wurden zwei Mastermixe hergestellt. Mastermix A, mit
+von einer Vorgängergruppe hergestellte tRNA:
+\\
+
+\begin{tabu}{ll}
+	\toprule
+	\multicolumn{2}{c}{Mastermix A} \\
+	\midrule
+	pre-tRNA \SI{10}{\pico\Molar\per\ul} & \SI{4.5}{\ul} \\
+	5x RNAse P Buffer & \SI{9}{\ul} \\
+	\ce{MgCl2} \SI{300}{\milli\Molar} & \SI{4.5}{\ul} \\
+	\ce{H2O} & \SI{27}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Mastermix A wurde auf vier Proben verteilt, und diese bei \SI{55}{\celsius} für
+\SI{5}{\minute} inkubiert.
+
+Im Anschluss wurde eine erste Version des Mastermix B hergestellt:
+\\
+
+\begin{tabu}{ll}
+	\toprule
+	\multicolumn{2}{c}{Mastermix $B_1$} \\
+	\midrule
+	5x RNAse P Buffer & \SI{9}{\ul} \\
+	\ce{MgCl2} \SI{300}{\milli\Molar} & \SI{4.5}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Aus dem Mastermix $B_1$ wurden \SI{3}{\ul} zu \SI{7}{\ul} \ce{H2O} gegeben, um
+eine Negativkontrolle (Probe "Neg") zu erhalten. Danach wurde $B_2$, die zweite
+Version des Mastermix B, durch Zugabe von \SI{7.7}{\ul}
+\SI{4.5}{\pico\Molar\per\ul} RNAse P erzeugt.
+
+Hiervon wurden je \SI{5.2}{\ul} auf drei Proben verteilt, und mit \SI{3}{\ul}
+\SI{6}{\milli\Molar} Ampicilin \& \SI{1.8}{\ul} \ce{H2O} (Probe "Amp"),
+\SI{4.8}{\ul} \ce{H2O} (Probe "Neo$-$"), beziehungsweise \SI{3}{\ul}
+\SI{6}{\milli\Molar} Neomycin \& \SI{1.8}{\ul} \ce{H2O} (Probe "Neo$+$")
+versetzt.  Auch diese Proben wurdeb bei \SI{55}{\celsius} für \SI{5}{\minute}
+inkuibiert.
+
+Im Anschluss wurden jeweils eine der Proben mit Mastermix $A$ und eine der mit
+Mastermix $B$ gemischt und bei \SI{37}{\celsius} für \SI{30}{\min} inkubiert.
+Die Reaktion wurde durch \SI{20}{\ul} 2x RNA loading dye gestoppt und die
+Proben bei \SI{95}{\celsius} für \SI{2}{\min} inkubiert. Schlussendlich wurden
+sie auf Eis gestellt.
+
+Zusammenfassend wurden also folgende vier Proben vorbereitet, gemischt, und
+inkubiert:
+\\
+
+\begin{tabu}{lrrrr}
+	\toprule
+	                & Neg          & Neo$-$         & Neo$+$        & Amp \\
+	\midrule
+	pre-tRNA        & \SI{1}{\ul}  & \SI{1}{\ul}    & \SI{1}{\ul}   & \SI{1}{\ul} \\
+	5x RNAse Puffer & \SI{4}{\ul}  & \SI{4}{\ul}    & \SI{4}{\ul}   & \SI{4}{\ul} \\
+	\ce{MgCl2}      & \SI{2}{\ul}  & \SI{2}{\ul}    & \SI{2}{\ul}   & \SI{2}{\ul} \\
+	RNAse P         &              & \SI{2.2}{\ul}  & \SI{2.2}{\ul} & \SI{2.2}{\ul} \\
+	Ampicilin       &              &                &               & \SI{3}{\ul} \\
+	Neomycin        &              &                & \SI{3}{\ul}   &             \\
+	\ce{H2O}        & \SI{13}{\ul} & \SI{10.8}{\ul} & \SI{7.8}{\ul} & \SI{7.8}{\ul} \\
+	\bottomrule
+\end{tabu}
+
+\subsubsection{Einfluss der Inkubationstemperatur \& Magnesiumkonzentration}
+
+Durch die zweite Gruppe respektive die Assistentin wurden weitere zwei
+Messreihen durchgeführt.
+
+\subsection{Denaturierende PAA Gelelektrophorese}
+
+Zwecks Analyse der Resultate der RNA-Prozessierungsreaktion wurde eine
+denaturierende Polyacrylamid-Gelelektrophorese durchgeführt.
+
+\subsubsection{Herstellung \SI{8}{\percent} Polyacrylamid-Urea-Gel}
+
+Die Glasplatten der Laufkammer wurden mit Seife und Ethanol gereinigt und die
+Kammer zusammengesetzt. \SI{70}{\ml} einer \SI{8}{\percent}
+Polyacrylamid-Urea-Lösung wurden mit \SI{600}{\ul} \SI{10}{\percent} APS, und
+\SI{30}{\ul} TEMED gemischt. Im Anschluss wurde die Lösung in die Kammer
+gegossen, und polymerisiert.
+
+\subsubsection{Gelelektrophorese}
+
+Das Geld wurde gemäss folgendem Ladeschema bestückt, und für \SI{2}{\hour}
+\SI{40}{\min} bei \SI{300}{\V} laufen gelassen. Im Anschluss wurde die RNA mit
+Ethidiumbromid für \SI{5}{\min} markiert, und das Gel unter UV Licht
+fotografiert.
+\\
+
+\begin{tabu}{ll}
+	\toprule
+	Kammer & Probe \\
+	\midrule
+	1 & Size Marker \\
+	\midrule
+	\multicolumn{2}{c}{Inkubationszeit} \\
+	\cmidrule(lr){1-2}
+	2 & Neg \\
+	3 & \SI{1}{\min} \\
+	4 & \SI{15}{\min} \\
+	5 & \SI{30}{\min} \\
+	\midrule
+	\multicolumn{2}{c}{\ce{Mg}-Konzentration} \\
+	\cmidrule(lr){1-2}
+	6 & Neg \\
+	7 & \SI{0.5}{\milli\Molar} \\
+	8 & \SI{1}{\milli\Molar} \\
+	9 & \SI{30}{\milli\Molar} \\
+	\midrule
+	\multicolumn{2}{c}{Inhibierung mit Antibiotika} \\
+	\cmidrule(lr){1-2}
+	10 & Neg \\
+	11 & Neo$-$ \\
+	12 & Neo$+$ \\
+	13 & Amp \\
+	\bottomrule
+\end{tabu}
 
 \chapter{Resultate}
 
 % Messungen, Berechnungen, Resultate
 
+\section{Kontrolle der Transkription}
+
+Abbildung \ref{fig:transkription_kontrolle} zeigt die Resultate der
+Transkriptionskontrolle unter UV Licht. 
+
+In der Spalte der RNAse P ist eine Bande im Bereich des 300bp Markers
+ersichtlich, in der Spalte der pre-tRNA eine Bande kurz unterhalb des 100bp
+Markers sowie eine weitere feine Bande kurz unterhalb des 1000bp Markers.
+
+Die erwartete Länge der pre-tRNA beträgt 93bp, was sich gut mit der aus dem Gel
+ablesbaren Länge des Produktes deckt. Die erwartete Länge der RNAse P beträgt
+382bp, was leicht grösser als die scheinbare Länge des Produktes ist. Die feine
+Bande bei 1000bp entspricht dem zugegebenen Plasmid.
+
+Die Transkription der pre-tRNA scheint damit erfolgreich gewesen zu sein, bei
+der RNAse P besteht eine kleine Unsicherheit.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/gel_transkription.png}
+	\caption{Kontrolle der tRNA \& RNAse P Transkription, Agarose-Gel unter UV Licht, 2x RNA loading dye-gefärbt}
+	\label{fig:transkription_kontrolle}
+\end{figure}
+
+\section{RNAse P Prozessierungsreaktionen}
+
+Abbildung \ref{fig:rnase_prozessierungsreaktionen} zeigt die Resultate der
+Analyse der Prozessierungsreaktion unter verschiedenen Bedingungen. Das Gel
+wurde entsprechend dem Protokoll mit Ethidiumdibromid gefärbt, und unter UV
+Licht fotografiert.
+
+Die schwachen weissen Banden am unteren Rand des Gels, sowie in gewissen
+Spalten, entsprechen der loading dye mit bekannten Grössen von 12bp respektive
+75bp. Basierend darauf, sowie auf dem verwendeten size marker, konnten die
+Grössen der restlichen Banden abgeschätzt werden.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{img/gel_rnase.png}
+	\caption{Analyse der RNAse P Prozessierungsreaktionen, Denaturierendes PAA-Geal unter UV Licht, markiert mit Ethidiumdibromid}
+	\label{fig:rnase_prozessierungsreaktionen}
+\end{figure}
+
+
+\subsection{Negativkontrollen}
+
+In allen Negativkontrollen ist bei 387bp keine Bande zu sehen, was bestätigt
+dass diese keine RNAse P enthielten. Wie erwartet fand dadurch keine
+Prozessierung der pre-tRNA statt, sodass bei 93pb die Bande der pre-tRNA
+sichtbar ist, aber keine weitere die der prozessierten pre-tRNA entsprechen
+würde.
+
+\subsection{Inhibierung mit Antibiotika}
+
+Ohne Zugabe von Neomycin fand wie erwartet eine Prozessierung der pre-tRNA
+statt. Jene wurde komplett durch die bei ca 300bp sichtbare RNAse P umgesetzt,
+und befindet sich auf Höhe der 75bp loading dye.
+
+Unter Zugabe von Neomycin ist eine Bande bei 93bp, aber keine bei ca 75bp
+ersichtlich. Dies bestätigt dass Neomycin die Prozessierung der pre-tRNA
+inhibiert. Die tiefere Konzentration der RNAse P in dieser Probe lässt sich
+aufgrund Verwendung eines Mastermix nicht auf einen Pipettierfehler
+zurückführen, sondern wird vermutlich das Resultat einer im kommerziell
+erworbenen Neomycin vorhandenen Protease sein, welche die RNAse P über Zeit
+abbaute.
+
+Unter Zugabe von Ampicilin ist eine Doppelbande - vermutlich durch einen
+Laufeffekt - auf Höhe der 75bp loading dye ersichtlich. Ampicilin inhibiert die
+Aktivität der RNAse P also nicht, die Prozessierung der pre-tRNA fand somit
+statt.
+
+\subsection{Effekt der Inkubationszeit \& \ce{Mg}-Konzentration}
+
+Eine Verlängerung der Inkubationszeit von \SI{1}{\min} auf \SI{15}{\min} führte
+zu einer minimale stärkeren Konzentration der Endprodukte, eine weitere
+Verlängerung auf \SI{30}{\min} hatte aber einen vernachlässigbaren Effekt.
+
+Der Einfluss der \ce{Mg}-Konzentration ist klar ersichtlich, mit nur minimaler
+Umsetzung bei \SI{0.5}{\milli\Molar}, einer Umsetzung von circa der Hälfte bei
+\SI{1}{\milli\Molar}, und einer fast kompletten Umsetzung bei
+\SI{30}{\milli\Molar}.
+
 \chapter{Diskussion}
 
-% Evaluiere / bewerte Ziel
-% Diskutiere Kontroll-Experimente
-% Fragen aus Skript
-% Fehlerquellen etc
+\section{Run-off Transkription}
+
+Bei der run-off Transkription bindet die Polymerase am Promoter eines
+linearisierten DNA Fragmentes, und transkribiert so lange bis sie vom Ende des
+Fragmentes abfällt. Dies ermöglicht beispielsweise Transkription von Fragmenten
+bestimmter Länge, ohne dass am Ende dieser Fragmente ein Terminator vorkommen
+muss, oder auch die Transkription eines Fragmentes mit rho-abhängigem
+Terminator ohne dass Zugabe von Rho notwendig ist.
+
+\section{Einfluss der untersuchten Faktoren}
+
+\subsection{Inkubationszeit}
+
+Eine Verlängerung der Inkubationszeit führte zu minimal stärkerem Umsatz, wobei
+der Effekt ab \SI{15}{\min} vernachlässigbar ist.
+
+\subsection{\ce{Mg}-Konzentration}
+
+Eine Erhöhung der \ce{Mg}-Konzentration, welche der RNAse P als Kofaktor dient,
+führte zu stärkerem Umsatz. Ab \SI{30}{\milli\Molar} konnte ein fast kompletter
+Umsatz beobachtet werden.
+
+\subsection{Inhibierung mit Antibiotika}
+
+Zugabe von \SI{3}{\milli\Molar} Neomycin B führte zu einer kompletten
+Inhibierung der Prozessierung. Zugabe von Ampicilin hatte keinen solchen
+Effekt.
+
+\section{Effekt von Neomycin B auf menschliche RNAse P}
+
+Gesetzt den Fall dass Neomycin die Zelle betreten kann, ist davon auszugehen
+dass Neomycin B die menschliche nukleare RNAse P ebenfalls durch Verdrängung
+der Magensium-Ionen inhibiert.\cite{inhibition_eukaryotic_rnasep}. Die
+mitochondriale RNAse P, welche nur noch aus Proteinkomponenten besteht, hat
+potentiell einen anderen Wirkungsmechanismums und wäre damit nicht betroffen.
+
+\section{Inhibierungsmechanismums von Neomycin B \& Ampicilin}
+
+Neomycin B agiert als nicht-kompetitivier Inhibitor, und besetzt zwei der
+\ce{Mg^{2+}} Bindungsstellen der RNAse P, wodurch deren Aktivität gehindert
+wird.\cite{skriptv1}
+
+Im Vergleich dazu inhibiert Ampicilin die Synthese der Zellwand in
+Gram-positiven und gewissen Gram-negativen Bakterien, was ultimativ zur Lysis
+führt.\cite{website:pubchem_ampicilin}.
+
+Damit ist auch klar, dass Ampicilin keinen direkten Effekt auf RNAse P hat, was
+im Experiment bestätigt wurde.
+
+\section{Katalysierungsreaktion von RNAse P mit pre-tRNA Substrat}
 
 
+RNAse P erkennt und bindet an das 3' Ende der pre-tRNA mittels einer
+spezifischen Sequenz. Ein Magnesium-Wasserstoff Komplex dient dann als
+Nukleophil für die Hydrolyse einer Phosphordiesterbindung am 5' Ende. Das
+Abgangsprodukt wird durch einen weiteren Magensium-Wasserstoff Komplex
+stabilisiert.
 
-\bibliographystyle{plainnat}
+\bibliographystyle{vancouver}
 \bibliography{references}
 
 \end{document}
