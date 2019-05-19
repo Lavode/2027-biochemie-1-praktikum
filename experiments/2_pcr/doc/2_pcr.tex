@@ -1,0 +1,532 @@
+\documentclass[a4paper,english]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\mole{mol}
+\DeclareSIUnit\rpm{\textsc{rpm}}
+
+% Chemistry
+\usepackage{mhchem}
+
+% Subfigures & captions
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Lab course biochemistry 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Lab course biochemistry 1}
+\title{2 - Rechtsmedizin: Entführungsfall mit Lösegelderpressung}
+
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Gruppe 14}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Einführung}
+
+Ziel des Experimentes war es, die Spezies einer Fleischprobe zu bestimmen.
+Hierzu wurde die DNA aufgereinigt, eine Sequenz der mitochondrialen DNA mittels
+PCR amplifiziert und mit Restriktionsenzymen verdaut. Die resultierenden
+Fragmente wurden in einer Gelelektrophorese aufgetrennt, und die Bandenmuster
+mit den Mustern bekannter Spezies verglichen.
+
+\chapter{Durchführung\cite{skriptv2}}
+
+\section{Verwendete Chemikalien}
+
+\begin{itemize}
+	\item Tris-\ce{HCl} \SI{10}{\milli\Molar}
+	\item TNE Extraktionspuffer
+		\begin{itemize}
+			\item \SI{10}{\milli\Molar} Tris-\ce{HCl}
+			\item \SI{150}{\milli\Molar} \ce{NaCl}
+			\item \SI{2}{\milli\Molar} EDTA
+			\item \SI{1}{\percent} SDS
+		\end{itemize}
+	\item Guanidin-Hydrochlorid \SI{5}{\Molar}
+	\item Proteinase K \SI{20}{\mg \per \ml}
+	\item Isopropanol \SI{80}{\percent}
+	\item Ethanol \SI{70}{\percent}
+	\item DNA Grössenmarker, 100bp Leiter
+\end{itemize}
+
+\section{DNA Extraktion}
+
+Zwecks Extraktion der DNA wurde die erhaltene Fleischprobe, sowie eine
+Extraktionskontrolle bestehend aus Wasser, wie folgt verarbeitet.
+
+\begin{itemize}
+	\item Zur Kontrolle des sauberen Arbeitens bei der DNA-Extraktion wird
+		ein weiteres \SI{2}{\ml} Röhrchen mit Wasser (\SI{300}{\ul})
+		anstelle von Fleisch aufgearbeitet (Extraktionskontrolle).
+	\item \SI{820}{\ul} TNE-Extraktionspuffer, \SI{80}{\ul} Proteinase K
+		(\SI{20}{\mg \per \ml}) und \SI{100}{\ul} \SI{5}{\Molar}
+		Guanidin- Hydrochlorid-Lösung dazupipettieren und gut mischen
+		(vortexen).
+	\item \SIrange{1.5}{2}{\hour} im Heizblock bei \SI{60}{\celsius}
+		inkubieren.
+	\item \SI{2}{\min} abkühlen lassen, dann \SI{10}{\min} bei 16‘000 g
+		zentrifugieren
+	\item Die \SI{10}{\milli\Molar} Tris-\ce{HCl} (pH 8.0) Lösung auf
+		\SIrange{60}{65}{\celsius} erhitzen (Elutionspuffer, siehe
+		unten).
+	\item In zwei frische Eppis je \SI{500}{\ul} gut resuspendierte
+		Glasmilch vorlegen.
+	\item \SI{750}{\ul} des Überstandes des Gewebextrakts (Achtung: Fett
+		und Fleischkrümel vermeiden!) zu der Glasmilch geben und durch
+		mehrmaliges sanftes Kippen des Röhrchens gut mischen (DNA
+		bindet an Glasmilch). Beschriften Sie Ihre Proben gut! Sie
+		können sich bei Ihrer Analyse keine Verwechslungen leisten.
+	\item Beschriftete Säule (mechanischer Filter) auf \SI{2}{\ml}-Spritze
+		stecken (Kolben beschriften, herausnehmen und in Verpackung
+		zurücklegen).
+	\item Glasmilchmischung in die Spritze pipettieren oder giessen.
+	\item Mischung mittels Kolben langsam durch die Säule stossen, vor dem
+		Herausziehen des Kolbens, Spritze von der Säule entfernen (wg.
+		Unterdruck).
+	\item Säule mit \SI{2}{\ml} \SI{80}{\percent} Isopropanol waschen:
+		\SI{80}{\percent} Isopropanol in Spritze geben und mit Kolben
+		durch Säule stossen.
+	\item Säule mit \SI{2}{\ml} \SI{70}{\percent} Ethanol waschen wie
+		vorher.
+	\item Spritzen entfernen und Säulen auf Eppendorfröhrchen stecken.
+		Säulen \SI{3}{\min} bei 12'000 g zentrifugieren (Ethanol
+		entfernen).
+	\item Säulen auf ein neues steriles \SI{1.5}{\ml} Eppendorfröhrchen
+		stecken und \SIrange{5}{10}{\min} bei Raumtemperatur trocknen
+		lassen (letztes Ethanol verdunsten lassen).
+	\item \SI{50}{\ul} heisses \SI{10}{\milli\Molar} Tris-\ce{HCl} pH 8.0
+		zugeben zum Eluieren.
+	\item \SI{1}{\min} inkubieren und Säulen kurz (\SI{30}{\s}) bei 12'000
+		g zentrifugieren.
+	\item Eppendorfröhrchen mit mtDNA-Eluat verschliessen und bei
+		\SI{4}{\celsius} (in Eis) für weitere Analysen aufbewahren.
+	\item Ausbeute und Reinheit spektroskopisch am NanoDrop ermitteln,
+		Werte notieren, mtDNAs im Eis aufbewahren (gut beschriftet).
+\end{itemize}
+
+\subsection{Reinheitsmessung am Nanodrop}
+
+Im Nanodrop wurde die Absorption der mtDNA sowie der Extraktionskontrolle bei
+UV Licht gemessen. Von besonderem Interesse waren dabei die Absorption bei
+\SI{260}{\nm} da dies die Wellenlänge ist bei der doppelsträngige DNA Helices
+absorbieren, sowie \SI{280}{\nm}. Aus den beiden Messungen und deren Verhältnis
+wurden die Reinheit sowie die Konzentration der mtDNA ermittelt.
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Probe & mtDNA & Extraktionskontrolle \\
+	\midrule
+	Konzentration & \SI{208.9}{\ng \per \ul} & \SI{6.8}{\ng \per \ul} \\
+	Verhältnis Absorption \SI{260}{\nm} : \SI{280}{\nm} & 1.89 & 2.24 \\
+	\bottomrule
+\end{tabu}
+\\
+
+Aus der tiefen DNA Konzentration der Extraktionskontrolle lässt sich schliessen
+dass sauber gearbeitet wurde, während das 260 : 280 Verhältnis der mtDNA Probe
+über 1.8 andeutet dass die aufgereinigte DNA nur mit wenig Proteinen
+verunreinigt ist.
+
+\section{Polymerase Kettenreaktion}
+
+Mittels PCR wurde ein Segment der aufgereinigten mitochondriellen DNA
+vervielfacht. Als Positivkontrolle diente humane mitochondrielle DNA.
+
+\subsection{Primersequenzen}
+
+Als Primer wurden cytbL und cytbH gewählt. Diese binden selektiv an
+konservierte Regionen des Cytochrom B Gens, und flankieren einen variablen
+Bereich, in der mitochondrialen DNA. Die Primer haben folgende Sequenz:
+
+\begin{description}
+	\item[cytb1 (cytbL)] 5`- CCA TCC AAC ATC TCA GCA TGA TGA AA -3`
+	\item[cytb2 (cytbH)] 5`- GCC CCT CAG AAT GAT ATT TGT CCT CA -3`
+\end{description}
+
+\subsection{PCR Mastermix}
+
+Zwecks Verbesserung der Pipettiergenauigkeit wurde ein Mastermix für die PCR
+vorbereitet.
+\\
+
+\begin{tabu}{llll}
+	\toprule
+	Stocklösung & Volumen 1x & Volumen 4.5x & Konzentration je Sample \\
+	\midrule
+	Templat-DNA                        & \SI{1.5}{\ul}  & -               & - \\
+	5x PCR Buffer für Taq              & \SI{12}{\ul}   & \SI{54}{\ul}    & 1x \\
+	\ce{H2O}                           & \SI{35.4}{\ul} & \SI{159.3}{\ul} & - \\
+	\ce{MgCl2} \SI{25}{\milli\Molar}   & \SI{6}{\ul}    & \SI{27}{\ul}    & \SI{2.5}{\milli\Molar} \\
+	Primer cytbL \SI{10}{\micro\Molar} & \SI{2}{\ul}    & \SI{9}{\ul}     & \SI{20}{\pico\mole} \\
+	Primer cytbH \SI{10}{\micro\Molar} & \SI{2}{\ul}    & \SI{9}{\ul}     & \SI{20}{\pico\mole} \\
+	dNTP (je \SI{10}{\milli\Molar})    & \SI{0.6}{\ul}  & \SI{2.7}{\ul}   & \SI{100}{\micro\Molar} \\
+	Taq Polymerase \SI{5}{U \per \ul}  & \SI{0.5}{\ul}  & \SI{2.25}{\ul}  & \SI{2.5}{U} \\
+	\bottomrule
+\end{tabu}
+\\
+
+\subsection{PCR Reaktion}
+
+Basierend auf dem Mastermix wurden vier PCR Proben mit jeweils \SI{1.5}{\ul}
+Templat-DNA vorbereitet:
+\begin{enumerate}
+	\item Isolat Fleischextrakt: mtDNA der Fleischprobe
+	\item Isolat Extraktionskontrolle
+	\item PCR Negativkontrolle: Wasser
+	\item PCR Positivkontrolle: Humane mtDNA
+\end{enumerate}
+
+PCR-Reaktion auf dem Thermocycler wie folgt durchführen:
+
+\begin{itemize}
+	\item 1 Zyklus: Denaturierung, \SI{3}{\min} bei \SI{95}{\celsius}
+	\item 40 Zyklen:
+		\begin{itemize}
+			\item Denaturierung: \SI{15}{\sec} bei \SI{95}{\celsius}
+			\item Annealing: \SI{15}{\sec} bei \SI{51}{\celsius}
+			\item Extension: \SI{15}{\sec} bei \SI{72}{\celsius}
+		\end{itemize}
+	\item 1 Zyklus: Letzte Extension, \SI{3}{\min} bei \SI{72}{\celsius}
+\end{itemize}
+
+\section{Restriktionsverdau}
+
+\subsection{Mastermix}
+
+Für die drei verwendeten Restriktionsenzyme wurde je ein Mastermix hergestellt:
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	& Volumen 1x & Volumen 2.5x \\
+	\midrule
+	PCR Produkt & \SI{15}{\ul}  & - \\
+	Puffer 10x (spezifisch für Enzym)  & \SI{2.5}{\ul} & \SI{6.25}{\ul} \\
+	\ce{H2O}    & \SI{6.5}{\ul} & \SI{16.25}{\ul} \\
+	Enzym (AluI \SI{10}{U \per \ul}, HinfI \SI{40}{U \per \ul}, HaeIII \SI{10}{U \per \ul})  & \SI{6.5}{\ul} & \SI{16.25}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Daraus wurden sechs Proben angefertigt:
+\\
+
+\begin{tabu}{lll}
+	\toprule
+	Probe & PCR Produkt & Restriktionsenzym \\
+	\midrule
+	1 & AluI & Gewebeprobe \\
+	2 & AluI & Positivkontrolle \\
+	3 & HaeIII & Gewebeprobe \\
+	4 & HaeIII & Positivkontrolle \\
+	5 & HinfI & Gewebeprobe \\
+	6 & HinfI & Positivkontrolle \\
+	\bottomrule
+\end{tabu}
+\\
+
+Die Röhrchen wurden für \SI{1}{\hour} bei \SI{37}{\celsius} inkubiert.
+
+\section{Gelelektrophorese}
+
+\subsection{Vorbereitung Agarosegel (\SI{2.2}{\percent} Agarose)}
+
+\begin{itemize}
+	\item \SI{1.1}{\g} Agarose in \SI{55}{\ml} 1x TAE-Puffer im
+		Mikrowellenofen gut aufkochen.
+	\item \SI{3}{\ul} Ethidiumbromidlösung (\SI{10}{\mg \per \ml}) dazu
+		pipettieren (Vorsicht mutagen!), mischen und sofort in die
+		vorbereitete Gelbox giessen.
+	\item Gel erstarren lassen, bis es weisslich trüb ist. Anschliessend in
+		die Laufkammer legen und mit 1x TAE-Puffer überschichten.
+\end{itemize}
+
+\subsection{Elektrophorese}
+
+\begin{itemize}
+	\item Isolierte mtDNA: \SI{5}{\ul} der unverdünnten, isolierten DNA
+		werden mit je \SI{5}{\ul} des entsprechen den restlichen
+		unbehandelten PCR-Produktes (in den \SI{0.2}{\ml} tubes) in ein
+		neues \SI{1.5}{\ml} tube pipettiert und mit weiteren 5 ul
+		Ladepuffer versetzt, ergibt \SI{15}{\ul} gesamt, die werden
+		komplett geladen.
+	\item Verdaute PCR-Produkte: geben Sie direkt zu den \SI{25}{\ul} im
+		Restriktionsverdau-Röhrchen \SI{5}{\ul} Ladepuffer dazu, macht
+		\SI{30}{\ul} gesamt, die werden komplett geladen.
+	\item Pipettieren Sie die Proben nach Ihrem erstellten Schema in die
+		Taschen des Gels, wobei Sie den 100 bp Längenstandard
+		(\SI{10}{\ul}) nicht vergessen sollten.
+	\item Bei \SI{100}{\V} Spannung wird die DNA im elektrischen Feld
+		solange aufgetrennt, bis die Farbe des Ladepuffers Orange G
+		gerade komplett aus dem unteren Rand des Gels herausläuft.
+	\item Das Gel wird im UV-Licht (bei \SI{254}{\nm}) fotografiert.
+		(UV-Licht ist sehr gefährlich für die Augen. Es ist deshalb
+		unbedingt mit Schutzbrille oder Schutzschild zu arbeiten).
+	\item Das Gel wird in den gesonderten Abfall gegeben und der
+		Ethidiumbromid-haltige Puffer wird durch Aktivkohle gefiltert.
+\end{itemize}
+
+\begin{landscape}
+
+\subsubsection{Ladeschema der Gelelektrophorese}
+
+\begin{tabu}{lp{6.5cm}p{6.5cm}ll}
+	\toprule
+	Lane & & & Loading Buffer & Ladevolumen \\
+	\midrule
+	1 & \SI{5}{\ul} PCR Produkt Fleischprobe & \SI{5}{\ul} mtDNA Fleischprobe & \SI{5}{\ul} & \SI{15}{\ul} \\
+	2 & \SI{5}{\ul} PCR Produkt Extraktionskontrolle & \SI{5}{\ul} mtDNA Extraktionskontrolle & \SI{5}{\ul} & \SI{15}{\ul} \\
+	3 & \SI{5}{\ul} PCR Produkt Negativkontrolle & \SI{5}{\ul} \ce{H2O} & \SI{5}{\ul} & \SI{15}{\ul} \\
+	4 & \SI{5}{\ul} PCR Produkt Positivkontrolle & \SI{5}{\ul} \ce{H2O} & \SI{5}{\ul} & \SI{15}{\ul} \\
+	5 & \SI{10}{\ul} Size marker & & & \SI{10}{\ul} \\
+	6 & & \SI{25}{\ul} Verdau AluI Fleischprobe & \SI{5}{\ul} & \SI{30}{\ul} \\
+	7 & & \SI{25}{\ul} Verdau AluI Positivkontrolle & \SI{5}{\ul} & \SI{30}{\ul} \\
+	8 & & \SI{25}{\ul} Verdau HaeIII Fleischprobe & \SI{5}{\ul} & \SI{30}{\ul} \\
+	9 & & \SI{25}{\ul} Verdau HaeIII Positivkontrolle & \SI{5}{\ul} & \SI{30}{\ul} \\
+	10 & & \SI{25}{\ul} Verdau HinfI Fleischprobe & \SI{5}{\ul} & \SI{30}{\ul} \\
+	11 & & \SI{25}{\ul} Verdau HinfI Positivkontrolle & \SI{5}{\ul} & \SI{30}{\ul} \\
+	12 & \SI{10}{\ul} Size marker & & & \SI{10}{\ul} \\
+	\bottomrule
+\end{tabu}
+\\
+
+Da nur 12 Lanes vorhanden waren, wurden in die ersten vier Lanes zwei zu
+analysierende Produkte gegeben. Da sich deren Grösse stark unterscheidet
+verursachte dies keine Probleme.
+
+\end{landscape}
+
+\subsection{Resultat der Elektrophorese}
+
+In Abbildung \ref{fig:pcr_elektrophorese} sind die Resultate der
+Gelelektrophorese unter UV Licht sichtbar. Die Lanes von links nach rechts
+entsprechen dem dokumentierten Ladeschema.
+
+In Lane 1 ist leicht unter dem 400bp Marker eine Bande zu sehen, welche
+bestätigt dass das PCR Produkt - dessen erwartete Länge 358bp beträgt -
+vorhanden ist. Weit oberhalb des 1000bp Markers ist eine Bande welche das
+komplette mitochondrielle Genom ist.
+
+Die Abwesenheit der Banden in Lane 2 bestätigt, dass sauber gearbeitet wurde,
+und in der Extraktionskontrolle keine DNA eingeschleust wurde welche durch die
+PCR vervielfältigt worden wäre.
+
+Das Gleiche gilt für die PCR Negativkontrolle in Lane 3, wobei dort eine feine
+Bande zu sehen ist, was impliziert dass die verwendete Wasserprobe leicht
+verschmutzt wurde.
+
+In der PCR Positivkontrolle in Lane 4 bestätigt die Bande bei 358bp dass die
+PCR Reaktion erfolgreich war.
+
+Auf die restlichen Lanes wird als Teil der Auswertung eingegangen.
+
+\begin{landscape}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\paperwidth]{img/pcr_elektrophorese.png}
+	\caption{Resultate der Agarose-Gelelektrophorese, unter UV Licht}
+	\label{fig:pcr_elektrophorese}
+\end{figure}
+
+\end{landscape}
+
+\chapter{Auswertung}
+
+Alle Verweise auf die verschiedenen Lanes beziehen sich auf Abbildung
+\ref{fig:pcr_elektrophorese}.
+
+\section{Bestimmung der Spezies}
+
+Im AluI Verdau der Fleischprobe ist eine doppelte Bande bei circa 200bp, sowie
+die originale Bande des unverdauten Segmentes bei 358bp, sichtbar. Dies erlaubt
+bereits alle Spezies auszuschliessen bei denen durch AluI nichts verdaut wird,
+oder deren AluI Verdau zu Segmenten unpassender Länge führt. Dies sind Giraffe,
+Mensch, Schaf, Pute, Huhn und Ziege da dort kein Verdau stattfindet, sowie
+Schwein da dort eine Bande bei 114bp erwartet würde.
+
+Im HaeIII Verdau werden jene Banden, die auch beim Menschen - ersichtlich in
+der Positivkontrolle - vorkommen ignoriert. Dies verhindert, dass aufgrund
+potentieller Verschmutzungen falsche Rückschlüsse gezogen werden. Damit
+verbleibt eine Bande bei 300bp sowie eine unter 100bp. Dies erlaubt die
+Auschliessung des Pferdes, da dort keine Bande bei 300bp erwartet wird.
+
+Damit bleibt als einzige Möglichkeit das Rind, was mittels des HinfI Verdau
+bestätigt werden kann. In jenem Verdau existieren Banden bei 200bp„ leicht über
+100bp, und deutlich unter 100bp. Alles dies sind Banden, die beim Rind (198bp,
+117bp, 44bp) erwartet werden.
+
+Damit lässt sich mit grosser Wahrscheinlichkeit sagen, dass es sich bei der
+Fleischprobe um Rind handelte. Weiterhin ist ersichtlich, dass mindestens der
+HaeIII Verdau durch menschliche DNA kontaminiert wurde.
+
+\subsection{PCR-RFLP Muster einiger Tierarten des cytb Systems}
+
+\begin{tabu}{lllllllllll}
+	\toprule
+	Enzym  & Bison & Giraffe & Mensch & Schaf & Pferd & Pute & Huhn & Rind & Schwein & Ziege \\
+	\midrule
+	AluI   & 190   & 358     & 358    & 358   & 190   & 358  & 358  & 190  & 244     & 358 \\
+	       & 168   &         &        &       & 168   &      &      & 168  & 114     &     \\
+	\midrule
+	HaeIII & 159   & 285     & 233    & 159   & 159   & 125  & 159  & 285  & 153     & 230 \\
+	       & 125   &  73     & 125    & 125   & 125   & 104  & 125  &  73  & 131     &  74 \\
+	       &  74   &         &        &  74   &  74   &  74  &  74  &      &  74     &  55 \\
+	       &       &         &        &       &       &  55  &      &      &         &     \\
+	\midrule
+	HinfI  & 267   & 198     & 198    & 198   & 198   & 198  & 187  & 198  & 358     & 198 \\
+	       &  91   & 160     & 160    & 160   & 160   & 160  & 161  & 117  &         & 160 \\
+	       &       &         &        &       &       &      &  10  &  44  &         &     \\
+	       &       &         &        &       &       &      &      &      &         &     \\
+	\bottomrule
+\end{tabu}
+
+\section{Bestätigung \& Behandlung unklarer Fälle}
+
+Für zusätzliche Sicherheit, oder falls kein klarer Befund möglich wäre, könnte
+ein Verdau mit weiteren Restriktionsenzymen durchgeführt werden. Diese würden
+zu weiteren Bandenmustern führen, mit welchen abgeglichen werden könnte.
+Weiterhin könnten auch andere geeignete Segmentes des Genoms mittels PCR-RFLP
+verglichen werden.
+
+Alternativ könnte auch, da inzwischen schnell und günstig machbar, das
+komplette oder Teile des Genoms sequenziert, und auf Ähnlichkeit mit bekannten
+bereits sequenzierten Genomen untersucht werden.
+
+\section{RFLP von Alec Jeffreys in 1985\cite{Jeffreys1985}}
+
+Alec Jeffreys untersuchte VNTRs in menschlichem Genom - kurze
+Nukleotidsequenzen welche an vielen Orten im Genom vorkommen, oft mehrere Male
+aneinandergereiht. Die Lage und Länge dieser Repetionen unterscheidet sich
+stark zwischen Individuen.
+
+Wird das Genom nun mit Restriktionsenzymen verdaut, und in einer
+Gelelektrophorese der Grösse nach angeordnet, können radioaktiv markierte
+Marker zugegeben werden welche diese VNTRs erkennen und binden. Auf einem Film
+kann nun die Position und Anzahl dieser VNTRs aufgrund des radioaktiven
+Zerfalls der gebundenen Marker visualisiert werden, was zu einem individuellen
+genetischen Fingerabdruck führt.
+
+\section{Vollständigkeit des Restriktionsverdaus}
+
+Um zu zeigen ob der Restriktionsverdau vollständig war, müssen die Lanes aller
+Verdaue mit der Lane, welche das unverdaute Segment enthält, verglichen werden.
+
+Relevant sind alle Verdaue, bei denen verdaute Segmente sichtbar sind. Ist bei
+allen diesen Verdauen keine Bande auf Höhe des unverdauten Segments ersichtlich,
+war der Verdau komplett. Hat hingegen mindestens ein Verdau zwei Bande, wobei
+eine auf Höhe des unverdauten Segmentes ist, war der Verdau nicht komplett.
+
+In unserem Fall ist klar, dass der Verdau nicht komplett war. So enthält
+beispielsweise der HinfI Verdau sowohl die Bande des vollen Segmentes, als auch
+Produkte des Verdaus.
+
+\section{Qualität der isolierten DNA}
+
+Aus der Nanodrop Spektroskopie - spezifisch dem 260:280 Verhältnis - ist
+ersichtlich, dass die isolierte DNA nur leicht mit Proteinen verunreinigt war.
+Weiterhin liefert die Spektroskopie eine Konzentration der DNA im
+aufgereinigten Sample.
+
+In der Gelelektrophorese ist sichtbar, dass zumindest der HaeIII Verdau mit
+humaner DNA kontaminiert wurde. Da diese Kontamination aber im HinfI Verdau
+nicht sichtbar ist, wird nicht die isolierte mtDNA sondern potentiell die Probe
+des Verdaus kontaminiert worden sein.
+
+\section{Kritischste PCR Temperatur}
+
+Die kritischste Temperatur der PCR ist jene des Annealing. Ist sie zu hoch, so
+kann sich der Primer nicht anlagern, und das Segment wird nur ungenügend oder
+gar nicht repliziert. Ist sie zu tief so sind die Primer nicht spezifisch
+genug, und es werden jenste alternative Segmente repliziert.
+
+\section{Genetische Voraussetzungen für PCR-RFLP}
+
+Um PCR-RFLP anwenden zu können, müssen zwei Voraussetzungen gegeben sein. Zum
+einen müssen zwei Stellen im Genom zwischen den zu unterscheidenden Spezies
+konserviert sein, so dass die Primer sich bei Proben aller Spezies daran
+anlagern können. Zum zweiten muss die Region zwischen den Primern variabel sein
+- das heisst es muss genügend Unterschiede geben, dass der Verdau durch
+verschiedene Restriktionsenzyme aussagekräftig ist.
+
+\bibliographystyle{vancouver}
+\bibliography{references}
+
+\end{document}
