@@ -1,0 +1,313 @@
+\documentclass[a4paper,english]{scrreprt}
+
+% Uncomment to optimize for double-sided printing.
+% \KOMAoptions{twoside}
+
+% Set binding correction manually, if known.
+% \KOMAoptions{BCOR=2cm}
+
+% Localization options
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Enhanced verbatim sections. We're mainly interested in
+% \verbatiminput though.
+\usepackage{verbatim}
+
+% PDF-compatible landscape mode.
+% Makes PDF viewers show the page rotated by 90°.
+\usepackage{pdflscape}
+
+% Advanced tables
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} }
+
+% Fancy tablerules
+\usepackage{booktabs}
+
+% Graphics
+\usepackage{graphicx}
+
+% Current time
+\usepackage[useregional=numeric]{datetime2}
+
+% Float barriers.
+% Automatically add a FloatBarrier to each \section
+\usepackage[section]{placeins}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+
+\usepackage{geometry}
+\usepackage{layout}
+
+% Math tools
+\usepackage{mathtools}
+% Math symbols
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+
+% SI units
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\mole{mol}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\cfu{cfu}
+
+% Chemistry
+\usepackage{mhchem}
+
+% Subfigures & captions
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\pagestyle{plain}
+% \fancyhf{}
+% \lhead{}
+% \lfoot{}
+% \rfoot{}
+% 
+% Source code & highlighting
+\usepackage{listings}
+
+% Convenience commands
+\newcommand{\mailsubject}{2027 - Lab course biochemistry 1}
+\newcommand{\maillink}[1]{\href{mailto:#1?subject=\mailsubject}
+                               {#1}}
+
+% Should use this command wherever the print date is mentioned.
+\newcommand{\printdate}{\today}
+
+\subject{2027 - Lab course biochemistry 1}
+
+\title{11 - Isolierung und Charakterisierung von Membranlipiden}
+
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Gruppe 14}
+
+\date{\printdate}
+
+% Needs to be the last command in the preamble, for one reason or
+% another. 
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Einleitung}
+
+Zwecks Kompartmentalisierung zwischen wie auch innerhalb der Zelle finden sich
+in vielen Organismen Membrane. Diese sind selektiv durchlässig für verschiedene
+metabolische Produkte, und dienen dem kontrollierten Informationsaustausch
+zwischen Zellen. Ein wichtiger Bestandteil dieser Membrane sind Membranlipide.
+Eine deren Klasse - die Phospholipide - wurde in diesem Versuch genauer
+untersucht.
+
+\section{Phospholipide}
+
+Phospholipide bestehen im Allgemeinen aus zwei hydrophoben Fettsäuren, und
+einem hydrophilen Kopf bestehend aus einer Phosphat-Gruppe, verbunden mittels
+einem Glycerol. Dies erlaubt in wässrigem Medium die Bildung einer
+Doppellipidschicht, in welcher die Fettsäuren gegen innen, und die
+Phosphat-Gruppen gegen aussen zeigen.
+
+Durch Anlagerung verschiedener organischer Moleküle an der Phosphatgruppe
+ergeben sich Klassen von Phospholipiden mit unterschiedlich polaren
+Kopfgruppen.
+
+\subsection{Polarität der Kopfgruppen}
+
+Für vier dieser Klassen soll hier die Polarität der Kopfgruppe hergeleitet
+werden. Dies sind Phosphatidylserine (PS), Phosphatidylcholine (PC),
+Phosphatidylethanolamine (PE), und Phosphatidylinositol (PI).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/phospholipide.png}
+	\caption{Struktur von vier Klassen von Phospholipiden, aus \cite{handoutv11}}
+	\label{fig:phospholipide}
+\end{figure}
+
+Phosphatidylcholine mit einem tertiären Amin besitzt die polarste Kopfgruppe
+dieser vier Klassen, da eine Verminderung der Ladung aufgrund der stabilen
+\ce{CH3} Reste kaum möglich ist.
+
+Phosphatidylethanolamin hat Aufgrund der in Abbildung \ref{fig:phospholipide}
+ersichtlichen positiv geladenen Amino-Gruppe die am zweitstärksten polare
+Kopfgruppe. Da es sich hierbei aber um ein primäres Amin handelt, kann diese
+Ladung durch Deprotonierung neutralisiert werden.
+
+Phosphatidylserin hat, in dem im Versuch verwendeten Lösungsmittel Chloroform,
+nur eine schwache Ladung auf der Carboxylgruppe, und somit den drittpolarsten
+Kopf.
+
+Phosphatidylcholine besitzt ein, in Abbildung \ref{fig:phospholipide}
+sichtbares, Ringsystem. Dessen elektronenstabilisiernde Eigenschaft führt dazu,
+dass PC die am wenigsten polare Kopfgruppe besitzt.
+
+\subsection{Einfluss der Fettsäuren auf auf Membranrigidität}
+
+Der Aufbau der Fettsäuren beinflusst die Rigidität der Membrane auf zwei Arten.
+Längere Fettsäuren führen, aufgrund stärkerer Van-der-Waals-Kräfte, zu einer
+rigideren Membran. Ungesättigte Fettsäuren - das heisst Fettsäuren mit C-C
+Doppelbindungen - besitzten einen Knick welcher dazu führt dass die Fettsäuren
+weniger dicht gepackt sind, was zu einer weniger rigiden Membran führt
+
+\section{Chromatographie}
+
+Die Chromatographie nutzt Interaktionen zwischen Molekülen dazu, ein Gemisch
+basierend auf einer oder mehreren Eigenschaften aufzutrennen. Allen
+Chromatographiemethoden ist gemein dass zwei Phasen verwendet werden - die
+mobile Phase in welcher das aufzutrennende Gemisch wandert, und die stationäre
+Phase, deren Wechselwirkungen mit dem Gemisch bestimmen wie schnell die
+einzelnen Komponenten wandern.
+
+Je nach Aufbau der stationären Phase kann beispielsweise nach Ladung oder
+Grösse aufgetrennt werden. In unserem Versuch wurden zwei Arten der
+Chromatographie verwendet - die Dünnschichtchromatographie und die
+Gaschromatographie.
+
+\subsection{Dünnschichtchromatographie}
+
+In der Dünnschichtchromatographie wurde ein apolares Lösungsmittel als mobile
+Phase, und ein polares Silicagel als stationäre Phase verwendet. Phospholipide
+mit polaren Kopfgruppen interagierten stärker mit der stationären Phase als
+jene mit apolaren Kopfgruppen, wodurch eine Auftrennung nach Polarität der
+Kopfgruppe stattfand - je apolarer die Kopfgruppe, umso weiter wanderten die
+Lipide auf der stationären Phase.
+
+Zwecks Analyse der auftegrennten Phospholipide wurden die Versuchsreihen mit
+Farbstoffen eingefärbt. Dichlorofluoreszin zwecks Detektion von Lipiden,
+Ninhydrin zwecks Detektion von freinen Aminen, und Molbydän zwecks Detektion
+von Phosphatgruppen.
+
+\subsection{Gaschromatographie}
+
+In der Gaschromatographie wurde als stationäre Phase ein inertes Gas verwendet,
+welches durch eine Säule - ein langer dünner Schlauch - floss. Als stationäre
+Phase diente Quarzglas, mit welchem das Innere der Säule ausgekleidet war.
+
+Die aufzutrennenden Phospholipide wurden durch langsames erhöhen der Temperatur
+in die Gasphase überührt, wobei jene mit polaren Kopfgruppen aufgrund stärkerer
+Interaktion mit der stationären Phase erst bei höheren Temperaturen in die
+Gasphase übergingen.
+
+Zur Detektion der Moleküle in der Gasphase diente ein
+Flammenionisationsdetektor am Ende der Säule, zusammen mit einer
+bereitgestellten Messreihe einer Referenzlösung von verschiedenen
+Phospholipiden.
+
+\section{Transesterifizierung}
+
+Da die Gaschromatographie nur mit flüchtigen Stoffen funktioniert, wurden die
+Phospholipide vorgängig mittels Transesterifizierung zu Fettsäuremethylestern
+überführt. \cite{handoutv11}
+
+Hierbei wird durch Zugabe eines Überschusses an Methanolat, und Heizen auf
+\SI{75}{\celsius} für \SI{7}{\min} die endotherme Reaktion in Richtung der
+Fettsäuremethylester bevorzugt. Die Reaktion wird durch Zugabe von \ce{KH2PO4}
+abgebrochen, welches die überschüssigen freien Methanolate protoniert.
+
+Der Reaktionsmechanismums ist in Abbildung \ref{fig:transesterifizierung}
+zusammengefasst.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\textwidth]{img/transesterifizierung.png}
+	\caption{Transesterifizierung von Phospholipden, aus \cite{handoutv11}}
+	\label{fig:transesterifizierung}
+\end{figure}
+
+Durch Zugabe von Hexan lassen sich die vergleichsweise apolaren
+Fettsäuremethyleser extrahieren und für die Gaschromatographie verwenden.
+
+\section{Ziel}
+
+Ziel des Experimentes war es, die Zusammensetzung der Lipiden in E. coli
+Membranen bei unterschiedlichen Temperaturen zu untersuchen. Hierzu wurden
+Lipide aus E. coli Kulturen welche bei \SI{20}{\celsius} respektive
+\SI{37}{\celsius} gezüchtet wurden extrahiert, und mittels Chromatographie
+aufgetrennt und analysiert.
+
+\subsection{Hypothesen}
+
+% TODO: Drei?
+
+Zwei Hypothesen wurden aufgestellt:
+\begin{enumerate}
+	\item In der \SI{20}{\celsius} Kultur sind Fettsäuren durchschnittlich
+		kürzer als in der \SI{37}{\celsius} Kultur
+	\item In der \SI{20}{\celsius} Kultur hat es mehr ungesättgte
+		Fettsäuren als in der \SI{37}{\celsius} Kultur
+\end{enumerate}
+
+\chapter{Durchführung}
+
+% TODO: Verweis auf Protokoll, Messwerte & Beobachtungen, potentielle Abweichungen vom Protokoll
+
+Der Versuch wurde gemäss bereitgestelltem Protokoll \cite{skriptv11}
+durchgeführt. Abweichungen, Beobachtungen und Messwerte sind hier dokumentiert.
+
+\section{Massebestimmung der isolierten Lipide}
+
+\subsection{Isolation der Membranlipide}
+
+Bei Zugabe des heisen Methanols bildete sich ein Ausfall. Dieser Ausfall
+enthielt alle Zellbestandteile welche nicht im apolaren Methanol lösbar waren -
+beispielsweise polare Protein, oder die negativ geladene DNA.
+
+Nach der Abdestillation des Methanols wurden die Lipidrückstände versehentlich
+mit reinem \ce{CH3Cl} anstelle einer 1:1 Mischung aus \ce{CH3Cl} und \ce{MeOH}
+gelöst und durch den Baumwollfilter gelassen. Zur Korrektur wurden die
+Rückstände im Rundkolben ein weiteres Mal mit \SI{1}{\ml} 1:1
+\ce{CH3Cl}:\ce{MeOH} gelöst, und diese Lösung ebenfalls durch den
+Baumwollfilter gegeben. Das zweite Nachspülen mit 1:1 \ce{CH3Cl}:\ce{MeOH} fand
+gemäss Protokoll statt.
+
+Bei der Zugabe der Lösungsmittels wurde eine leichte Verfärbung beobachtet, was
+impliziert dass sich gewisse Bestandteile des Rückstandes lösten.
+
+\subsection{Bestimmung der isolierten Lipidmenge}
+
+Da die Analysewage defekt war, musste die Messung mit der Oberschalenwage
+durchgeführt werden. Aufgrund deren fehlenden Genauigkeit konnte die isolierte
+Menge nicht bestimmt werden, und die Menge ans isolierten Lipiden wurde von
+Auge geschätzt. Alle unsere Proben wurden in \SI{1}{\ml} \ce{CHCl3} gelöst, die
+gewünschte Endkonzentration von \SI{20}{\mg\per\ml} war damit nur approximativ
+möglich.
+
+\section{Dünnschichtchromatographie}
+
+Die DC Platte wurde gemäss Ladeschema in Tabelle \ref{tbl:dc_ladeschema} mit
+den extrahierten Lipiden der beiden Kulturen, und einer Referenzlösung,
+bestückt.
+
+\begin{table}
+	\centering
+	\begin{tabu}{l|ccc|c|ccc|c|ccc|c}
+		\toprule
+		                  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+		\midrule
+		\SI{20}{\celsius} & x &   &   &   & x &   &   &   & x &    &    &    \\
+		\SI{37}{\celsius} &   & x &   &   &   & x &   &   &   & x  &    &    \\
+		Referenz          &   &   & x &   &   &   & x &   &   &    & x  &    \\
+		\midrule
+		Farbstoff         & \multicolumn{3}{c|}{Dichlorof.} & & \multicolumn{3}{c|}{Ninhydrin} & & \multicolumn{3}{c|}{Molybdän} \\
+		\bottomrule
+	\end{tabu}
+	\caption{Ladeschema für Dünnschichtchromatographie}
+	\label{tbl:dc_ladeschema}
+\end{table}
+
+
+
+
+\bibliographystyle{vancouver}
+\bibliography{references}
+
+\end{document}
