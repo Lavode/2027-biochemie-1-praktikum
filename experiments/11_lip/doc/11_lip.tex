@@ -404,10 +404,37 @@ Kulturen nicht unterscheiden bestätigt werden.
 	\caption{Rohdaten der Gaschromatographie}
 \end{figure}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{img/gc_37_chromatogramm.png}
+		\caption{\SI{37}{\celsius} Kultur}
+		\label{fig:gc_37_chromatogramm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{img/gc_20_chromatogramm.png}
+		\caption{\SI{20}{\celsius} Kultur}
+		\label{fig:gc_20_chromatogramm}
+	\end{subfigure}
+	\caption{Automatisch erstelles Chromatogramm der Gaschromatographie}
+	\label{fig:gc_chromatogramm}
+\end{figure}
+
 
 In Abbildung \ref{fig:gc_37_roh} sind die GC-Rohdaten der \SI{37}{\celsius}
 Kultur, in Abbildung \ref{fig:gc_20_roh} jene der \SI{20}{\celsius} Kultur
-dargestellt.
+dargestellt. Entsprechend finden sich in Abbildung \ref{fig:gc_chromatogramm}
+die automatisch erstellen Chromatogramme für die beiden Kulturen. Die grossen
+Peaks auf der linken Seite entsprechen dabei dem verwendeten Lösungsmittel.
+
+\subsection{Verteilung der detektierten Stoffen}
+
+Direkt ist ersichtlich, dass die Merheit der Peaks der beiden Chromatogramme in
+Abbildung \ref{fig:gc_chromatogramm} an der gleichen Stelle sind. Dies
+impliziert, dass bei beiden Kulturen mehrheitlich die gleichen Membranlipide
+ausgebildet werden. Die \SI{37}{\celsius} Kultur scheint aber ein marginal
+breiteres Spektrum zu haben, bei welchem gewisse Stoffe zusätzlich, oder in
+grösserer Konzentration, gebildet werden als in der \SI{20}{\celsius} Kultur.
 
 \section{Zuordnung der stärksten Signale zu Fettsäuren}
 
@@ -529,6 +556,56 @@ Kettenlänge bestätigen - für die \SI{20}{\celsius} Kultur ergibt dies einen
 Wert von 16.66 C-Atomen, für die \SI{37}{\celsius} Kultur einen Wert von 16.74.
 Dieser Unterschied scheint vernachlässigbar, besonders unter Betrachung der
 Ungenauigkeit des Experimentes.
+
+\chapter{Schlussfolgerungen}
+
+\section{Zusammenfassung}
+
+Zusammenfassend lässt sich sagen:
+
+\begin{itemize}
+	\item Es kann nicht bestätigt werden, dass bei tieferen Temperaturen
+		die Fettsäuren der Membranlipide kürzer sind. Für eine genauere
+		Untersuchung müsste ein Experiment mit höherer Genauigkeit
+		durchgeführt werden.
+	\item Es kann bestätigt werden, dass bei Tieferen Temperaturen in der
+		Membran mehr ungesättigte Fettsäuren vorkommen.
+	\item Es kann bestätigt werden, dass die Temperature keinen Einfluss
+		auf die Kopfgruppen der Phospholipide der Membran hat.
+\end{itemize}
+
+\section{Reaktionsmechanismums Glycerol-2-Phosphat}
+
+Durch Abspaltung der Fettsäuren in der Transesterifizierung bleibt
+Glycerol-1-Phosphat übrig. Durch einen intramolekularen nukleophilen Angriff
+des elektronegativen Sauerstoffs auf die Phosphatgruppe kommt es zu einer
+Bildung einer Ringstruktur, und durch die Protonierung des Sauerstoffs der
+Phosphatgruppe zur Abspaltung der ehemaligen Kopfgruppe des Phospholipides.
+
+Nach anschliessender Ringöffnung bleibt ein Glycerol-2-Phosphat.
+
+Die Kopfgruppe die im Falle der Transesterifizierung der Phospholipide noch
+vorhanden ist, kann durch Protonierung des Sauerstoff-Atoms der Phosphatgruppe
+abgehen.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.9\textwidth}
+		\includegraphics[width=0.5\linewidth]{img/glycerol_1_phosphat.png}
+		\caption{Glycerol-1-Phosphat}
+	\end{subfigure}
+
+	\begin{subfigure}{.9\textwidth}
+		\includegraphics[width=0.5\linewidth]{img/glycerol_phosphat_ring.png}
+		\caption{Intermediäre Ringstruktur}
+	\end{subfigure}
+
+	\begin{subfigure}{.9\textwidth}
+		\includegraphics[width=0.5\linewidth]{img/glycerol_2_phosphat.png}
+		\caption{Glycerol-2-Phosphat}
+	\end{subfigure}
+\end{figure}
+
 
 
 \bibliographystyle{vancouver}
