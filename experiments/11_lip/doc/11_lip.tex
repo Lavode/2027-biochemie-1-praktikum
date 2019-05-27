@@ -236,19 +236,17 @@ aufgetrennt und analysiert.
 
 \subsection{Hypothesen}
 
-% TODO: Drei?
-
-Zwei Hypothesen wurden aufgestellt:
+Drei Hypothesen wurden aufgestellt:
 \begin{enumerate}
 	\item In der \SI{20}{\celsius} Kultur sind Fettsäuren durchschnittlich
 		kürzer als in der \SI{37}{\celsius} Kultur
 	\item In der \SI{20}{\celsius} Kultur hat es mehr ungesättgte
 		Fettsäuren als in der \SI{37}{\celsius} Kultur
+	\item Die polaren Kopfgruppen unterscheiden sich nicht zwischen den
+		beiden Kulturen.
 \end{enumerate}
 
 \chapter{Durchführung}
-
-% TODO: Verweis auf Protokoll, Messwerte & Beobachtungen, potentielle Abweichungen vom Protokoll
 
 Der Versuch wurde gemäss bereitgestelltem Protokoll \cite{skriptv11}
 durchgeführt. Abweichungen, Beobachtungen und Messwerte sind hier dokumentiert.
@@ -304,7 +302,233 @@ bestückt.
 	\label{tbl:dc_ladeschema}
 \end{table}
 
+Die Resultate der Dünnschichtchromatographie werden in der Auswertung besprochen.
 
+\chapter{Auswertung DC}
+
+\section{Resultate}
+
+In Abbildung \ref{fig:dc_resultat} sind die beschrifteten Resultate der
+Dünnschichtchromatographie dargestellt. Auf die Gruppen von Flecken A bis G
+soll hier eingegangen werden.
+
+\subsection{Bedeutung der Färbungen}
+
+Eine Einfärbung mit Dichlorofluoreszin impliziert, dass es sich bei der
+fraglichen Probe um ein Lipid handelt. Ninhydrin bindet an freie Amingruppen,
+und Molybdän an Phosphatgruppen.
+
+\subsection{A: Phosphatidylethanolamin}
+
+Aus den Färbungen ist ersichtlich, dass es sich um ein Lipid, mit freiem Amin,
+und einer Phosphatgruppe handelt. Zusammen mit der aus der Laufhöhe
+ersichtlichen mittleren Polarität muss es sich hierbei um PE handeln.
+
+\subsection{B: Phosphatidylcholin}
+
+Gemäss den Färbungen handelt es sich um ein Phospholipid ohne freies Amin, das
+zudem aufgrund tieferer Laufhöhe polarer als PE ist. Dies impliziert dass es
+sich um PC handelt.
+
+\subsection{C: Phosphatidylserin}
+
+Hierbei handelt es sich ebenfalls um ein Phospholipid ohne freies Amin, welches
+aber weniger polar als PE ist. Folglich handelt es sich hierbei um PS.
+
+\subsection{D: Phosphatidylinositol}
+
+Dieses Lipid das fast auf Höhe der Laufmittelfront ist ist folglich sehr
+apolar, deshalb muss dies PI sein. Erwartet wäre aufgrund der Phosphatgruppe
+eine Färbung der Molybdänbande gewesen, jener Farbstoff bedingt aber eine hohe
+Konzentration Substrat um sichtbar zu sein, was unter anderem aufgrund der
+Ungenauigkeit der Verdünnung nicht gewährleistet war.
+
+\subsection{E: Stark apolare Stoffe}
+
+Bei diesen komplett apolaren Lipiden ohne Phosphatgruppe wird es sich
+beispielsweise um freie Fettsäuren oder Triacylglyceride, welche allesamt keine
+polaren Kopfgruppen besitzen, handeln.
+
+\subsection{F: Stark polare Stoffe}
+
+Aufgrund der Laufhöhe ist klar dass es sich um stark polare, Amin-haltige,
+Stoffe handelt, welche keine Lipide sind. Dies sind Proteine und Aminosäuren,
+welche bei der Aufreinigung nicht komplett entfernt wurden.
+
+\subsection{G: Unbekanntes Phospholipid}
+
+Hierbei scheint es sich um ein Phospholipid ohne freies Amin zu handeln,
+welches allerdings in der Referenzlösung nicht vorhanden ist, und somit nicht
+klassifiziert werden kann.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/dc_resultat.png}
+	\caption{Resultat der Dünnschichtchromatographie, Ladeschame \& Einfärbung gemäss Tabelle \ref{tbl:dc_ladeschema}, Silikagel \& \ce{CH3Cl}}
+	\label{fig:dc_resultat}
+\end{figure}
+
+\section{Interpretation}
+
+Von den vier untersuchten Phospholipiden sind in E. coli Zellen nur PE und PC
+vorhanden. Weiterhin sind beide dieser Phospholipide sowohl in der
+\SI{20}{\celsius} als auch in der \SI{30}{\celsius} Probe enthalten. Die
+Abwesenheit von PC in der Dichlorofluoreszin-Färbung der \SI{37}{\celsius}
+Probe lässt sich mit der Ungenauigkeit der Verdünnung erklären - so ist in der
+Molybdän-Färbung ein Fleck auf erwarterter Höhe sichtbar.
+
+Qualitativ kann aufgrund der Ungenauigkeit der Verdünnung onehin keine Aussage
+gemacht werden.
+
+Damit kann die Hypothese, dass sich die polaren Kopfgruppen zwischen den beiden
+Kulturen nicht unterscheiden bestätigt werden.
+
+\chapter{Auswertung GC}
+
+\section{Rohdaten}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\includegraphics[width=\linewidth]{img/gc_37_roh.png}
+		\caption{\SI{37}{\celsius} Kultur}
+		\label{fig:gc_37_roh}
+	\end{subfigure}
+	~
+	\begin{subfigure}{.45\textwidth}
+		\includegraphics[width=\linewidth]{img/gc_20_roh.png}
+		\caption{\SI{20}{\celsius} Kultur}
+		\label{fig:gc_20_roh}
+	\end{subfigure}
+	\label{fig:gc_roh}
+	\caption{Rohdaten der Gaschromatographie}
+\end{figure}
+
+
+In Abbildung \ref{fig:gc_37_roh} sind die GC-Rohdaten der \SI{37}{\celsius}
+Kultur, in Abbildung \ref{fig:gc_20_roh} jene der \SI{20}{\celsius} Kultur
+dargestellt.
+
+\section{Zuordnung der stärksten Signale zu Fettsäuren}
+
+Allen Stoffe, die in wenigstens einer der beiden Gaschromatographien einen
+Flächenanteil von mindestens \SI{5}{\percent} besassen wurden in eine separate
+Tabelle extrahiert, und mittels bereitgestllter Referenztabelle den Fettsäuren
+zugeordnet. Die Resultate dieser Zuordnung finden sich in Tabelle
+\ref{tbl:gc_fs_haeufig}.
+
+\begin{table}
+	\centering
+	\begin{tabu}{lllll}
+		\toprule
+		Fettsäure (C:D) & \multicolumn{2}{c}{Retention time [\si{\s}]} & \multicolumn{2}{c}{Area [\si{\percent}]} \\
+		                & \SI{20}{\celsius} & \SI{37}{\celsius}  & \SI{20}{\celsius} & \SI{37}{\celsius} \\
+		\midrule
+		15:0           & 4.468 & 4.472 & 3.87  & 12.49 \\
+		16:$1^9$       & 5.142 & 5.138 & 32.84 & 3.11  \\
+		16:0           & 5.316 & 5.32  & 16.82 & 22.71 \\
+		17:0$\Delta$   & 6.045 & 6.051 & 8.37  & 28.49 \\
+		17:0           & 6.169 & 6.173 & 1.78  & 6.99  \\
+		18:$1^9$ trans & 6.799 & 6.802 & 11.71 & 0     \\
+		18:$1^9$ cis   & 6.85  & 6.849 & 16.28 & 7.5   \\
+		19:0$\Delta$   & 7.742 & 7.748 & 0.91  & 8.4   \\
+		\bottomrule
+	\end{tabu}
+	\caption{Zuordnung von Fettsäuren mit mindestens \SI{5}{\percent}}
+	\label{tbl:gc_fs_haeufig}
+\end{table}
+
+\subsection{Auswertung}
+
+Die Daten aus Tabelle \ref{tbl:gc_fs_haeufig} wurden mittels Balkendiagramm in
+Abbildung \ref{fig:gc_fs_haeufig} visualisiert. Es ist sofort ersichtlich, dass
+alle gesättigten Fettsäuren (15:0, 16:0, 17:0, 17:0$\Delta$, 19:0$\Delta$) in
+der \SI{37}{\celsius} Kultur viel häufiger vorkommen als in der
+\SI{20}{\celsius} Kultur. Analog sind alle ungesättigten Fettsäuren (16:$1^9$,
+18:$1^9$ cis, 18:$1^9$ trans) in der \SI{20}{\celsius} Kultur häufiger
+vorhanden.
+
+Weiterhin scheint ein Trend zu bestehen, dass der Konzentrations-Peak der
+\SI{20}{\celsius} Kultur bei kürzeren Fettsäuren liegt als jener der
+\SI{37}{\celsius} Kultur, was nachfolgend genauer untersucht wird.
+
+Bereits jetzt lässt sich aber die Hypothese, dass die Membran bei tieferen
+Temperaturen mehr ungesättigte Fettsäuren enthält, bestätigen.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/gc_membranlipide.png}
+	\caption{Vergleich der Konzentration häufiger Membranlipide bei \SI{20}{\celsius} und \SI{37}{\celsius}}
+	\label{fig:gc_fs_haeufig}
+\end{figure}
+
+\section{Vergleich der Fettsäurenlänge}
+
+Basierend auf den Rohdaten aus Abbildung \ref{fig:gc_roh} wurden alle möglichen
+Fettsäuren zugeordnet, und deren Grösse, als Länge der C-Kette, bestimmt. Diese
+Resultate finden sich in Tabelle \ref{tbl:gc_fs_laenge}
+
+\begin{table}
+	\begin{tabu}{lllll}
+		\toprule
+		Fettsäure (C:D) & Retention time [\si{\s}] & Area [\si{\percent}] & Kultur             & Länge (C-Kette) \\
+		\midrule
+		12:0            &  2.283                   &  0.46                &  \SI{20}{\celsius} &  12 \\
+		14:0            &  3.66                    &  1                   &  \SI{20}{\celsius} &  14 \\
+		15:0            &  4.468                   &  3.87                &  \SI{20}{\celsius} &  15 \\
+		16:$1^9$        &  5.142                   &  32.84               &  \SI{20}{\celsius} &  16 \\
+		16:0            &  5.316                   &  16.82               &  \SI{20}{\celsius} &  16 \\
+		17:0$\Delta$    &  6.045                   &  8.37                &  \SI{20}{\celsius} &  17 \\
+		17:0            &  6.169                   &  1.78                &  \SI{20}{\celsius} &  17 \\
+		18:$1^9$ trans  &  6.799                   &  11.71               &  \SI{20}{\celsius} &  18 \\
+		18:$1^9$ cis    &  6.85                    &  16.28               &  \SI{20}{\celsius} &  18 \\
+		18:0            &  7.018                   &  0.48                &  \SI{20}{\celsius} &  18 \\
+		19:0$\Delta$    &  7.742                   &  0.91                &  \SI{20}{\celsius} &  19 \\
+		12:0            &  2.286                   &  0.2                 &  \SI{37}{\celsius} &  12 \\
+		13:0            &  2.923                   &  0.14                &  \SI{37}{\celsius} &  13 \\
+		14:0            &  3.663                   &  1.21                &  \SI{37}{\celsius} &  14 \\
+		15:0            &  4.472                   &  12.49               &  \SI{37}{\celsius} &  15 \\
+		30H-14:0        &  4.862                   &  0.12                &  \SI{37}{\celsius} &  14 \\
+		16:$1^9$        &  5.138                   &  3.11                &  \SI{37}{\celsius} &  16 \\
+		16:0            &  5.32                    &  22.71               &  \SI{37}{\celsius} &  16 \\
+		17:0$\Delta$    &  6.051                   &  28.49               &  \SI{37}{\celsius} &  17 \\
+		17:0            &  6.173                   &  6.99                &  \SI{37}{\celsius} &  18 \\
+		18:$1^9$ trans  &  6.802                   &  0                   &  \SI{37}{\celsius} &  18 \\
+		18:$1^9$ cis    &  6.849                   &  7.5                 &  \SI{37}{\celsius} &  18 \\
+		18:0            &  7.022                   &  0.81                &  \SI{37}{\celsius} &  18 \\
+		19:0$\Delta$    &  7.748                   &  8.4                 &  \SI{37}{\celsius} &  19 \\
+		\bottomrule
+	\end{tabu}
+	\caption{Zuordnung von allen möglichen Fettsäuren}
+	\label{tbl:gc_fs_laenge}
+\end{table}
+
+\subsection{Auswertung}
+
+Die Daten aus Tabelle \ref{tbl:gc_fs_laenge} wurden dann per Länge der C-Kette
+und Kultur summiert, und in einem Scatterplot in Abbildung
+\ref{fig:gc_fs_laenge} dargestellt. Zwecks besserer visueller Darstellung wurde
+zwischen je zwei benachbarten Datenpunkten eine lineare Approximation
+eingefügt.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/gc_membranlipide_laenge.png}
+	\caption{Vergleich der Konzentration verschiedener Membranlipide nach Länge bei \SI{20}{\celsius} und \SI{37}{\celsius}}
+	\label{fig:gc_fs_laenge}
+\end{figure}
+
+Basierend auf dieser Auswertung kann die Hypothese, dass die Membran bei
+tieferen Temperaturen aus kürzeren Fettsäuren besteht nicht bestätigt werden.
+Zwar scheint bei \SI{20}{\celsius} das Konzentrations-Peak bei kürzeren
+Fettsäuren zu sein, doch gibt es auch weiterhin viele - bei gewissen Längen
+sogar mehr - lange Fettsäuren.
+
+Dies lässt sich mit der nach Konzentration gewichteten durchschnittlichen
+Kettenlänge bestätigen - für die \SI{20}{\celsius} Kultur ergibt dies einen
+Wert von 16.66 C-Atomen, für die \SI{37}{\celsius} Kultur einen Wert von 16.74.
+Dieser Unterschied scheint vernachlässigbar, besonders unter Betrachung der
+Ungenauigkeit des Experimentes.
 
 
 \bibliographystyle{vancouver}
