@@ -87,7 +87,7 @@
 
 \title{4 - Enzymkinetik mit Katalase}
 
-\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Gruppe 14}
+\author{Michael Senn \maillink{michael.senn@students.unibe.ch} - 16-126-880 - Group 14}
 
 \date{\printdate}
 
@@ -103,30 +103,30 @@
 
 Enzymes are a class of proteins which accelerate certain reactions by several
 orders of magnitude. They are often specific to one kind of reaction, which
-they catalyze by eg increasing the stability of intermediary products, base and
-acid reactions, or influencing the spatial orientiation of molecules involved
+they catalyse by eg increasing the stability of intermediary products, base and
+acid reactions, or influencing the spatial orientation of molecules involved
 in the reaction.
 
-Enzyme activity is often influenced by various environmental factors, such as
-temperature, the concentration of enzyme and substrate and the pH value.
+Enzyme activity is influenced by various environmental factors such as
+temperature, the concentration of enzyme and substrate, and the pH value.
 
-Catalase is one such enzyme which catalyzes the decay of \ce{H2O2} to \ce{H2O}
-and \ce{O2}. This prevents the buildup of toxic \ce{H2O2} in cells, which is
-the result of the reduction of \ce{O2-} radicals.
+Catalase is one such enzyme which catalyses the decay of \ce{H2O2} to \ce{H2O}
+and \ce{O2}. This prevents the buildup of toxic \ce{H2O2} in cells. \ce{H2O2}
+accumulates over time due to the reduction of \ce{O2-} radicals.
 
-In this experiment we aim to characterize the enzymatic activity of catalse
+In this experiment we aim to characterise the enzymatic activity of catalase
 under varying environmental factors.
 
 \chapter{Methods}
 
-To characterize activity of catalase under various constraints, the cytosol -
+To characterise activity of catalase under various constraints, the cytosol -
 containing large concentrations of catalase - of potatoes was isolated. A small
 amount of this solution was applied onto a small filter paper, which was then
 submerged into a solution containing \ce{H2O2}.
 
 The decomposition of \ce{H2O2} by the catalase lead to the formation of oxygen
 bubbles, some of which attached to the filter paper. Once enough oxygen was
-attached, the filter paper rose to the surface.
+attached the filter paper rose to the surface.
 
 The time between the submerging and the resurfacing of the filter paper was
 measured, and taken as an indication of the activity of catalse under the given
@@ -138,10 +138,10 @@ circumstances.
 
 \subsection{Experiment}
 
-To start with, the ideal enzymatic concentration was determined. The aim was to
-have a concentration where the filter resurfaces slow enough that time can be
-measured accurately, and fast enough that difusion of the enzyme does not
-influence results significantly.
+To start with the ideal concentration of catalase was determined. The aim was
+to have a concentration where the filter resurfaces slowly enough that time can
+be measured accurately, and fast enough that diffusion of the enzyme in
+solution does not influence results significantly.
 
 To achieve this, the dilutions shown in table \ref{tbl:enzyme_dilutions} were
 prepared, applied to a filter, and each submerged in \SI{60}{\ml}
@@ -198,7 +198,7 @@ figure \ref{fig:enzyme_optimal_concentration}.
 
 It is clearly visible that, as enzyme concentration increases, so does the the
 resurfacing velocity. This matches the expectation that presence of more enzyme
-will increase the number of reactions catalyzed per second. There seems to be a
+will increase the number of reactions catalysed per second. There seems to be a
 saturation effect, where reaction velocity does not increase a lot beyond an
 enzyme concentration of \SI{100}{U \per \ml}. Additional measurements at higher
 concentrations would be required to verify this, however.
@@ -221,7 +221,8 @@ existing dilutions, we continued using this one for future experiments.
 
 In the next experiment we measured resurfacing time in solutions with different
 concentrations of the substrate, as shown in table
-\ref{tbl:substrate_concentration}.
+\ref{tbl:substrate_concentration}. This allows calculating $K_m$, the substrate
+concentration where reaction speed is half the maximum speed.
 
 \begin{table}
 	\centering
@@ -260,7 +261,7 @@ Each measurement was done thrice, with results shown in table
 
 \subsection{Reaction speed as factor of enzyme concentration}
 
-As before the average surface velocity was calculated and graphed against the
+As before the average resurfacing velocity was calculated and graphed against the
 concentration of the substrate, shown in figure
 \ref{fig:substrate_concentration}.
 
@@ -277,8 +278,7 @@ concentration of substrate, due to the requirement that enzyme and substrate
 meet for the reaction to proceed.
 
 There is, however, no saturation visible. This prevents reliably estimating
-$K_m$, as it is defined to be the substrate concentration where the enzymatic
-reaction is at half the maximum speed. 
+$K_m$, as the maximum reaction speed can not be accurately determined.
 
 It is possible that substrate concentration would have had to be increased even
 higher in order to enter an area of substrate saturation, where the increase in
@@ -305,17 +305,18 @@ With that in mind, $K_m$ was estimated with a double reciprocal Lineweaver-Burk
 plot coupled with a linear regression seen in figure
 \ref{fig:substrate_concentration_lburk}.
 
-From its expression, the X intercept can be calculated as
+From the equation of the used linear regression, the X intercept can be
+calculated as:
 \begin{align*}
 	0 & = 0.0815 * x + 7.6466 \\
 	x & = \frac{-7.6466}{0.0815} \\
 	x & \approx -93.8
 \end{align*}
 
-As the X axis intercept is equal to $-\frac{1}{K_m}$, it follows that $K_m
+As the X axis intercept is equal to $-\frac{1}{K_m}$\cite{wiki:lburk}, it follows that $K_m
 \approx \SI{0.01}{\percent}$.
 
-\section{pH dependance of reaction speed}
+\section{pH dependence of reaction speed}
 
 \subsection{Experiment}
 
@@ -351,7 +352,7 @@ Each measurement was done twice, with results shown in table
 
 \subsection{Reaction speed as factor of pH value}
 
-Once more, average surface velocity was calculated and graphed, shown in figure
+Once more, average resurfacing velocity was calculated and graphed, shown in figure
 \ref{fig:ph}.
 
 \begin{figure}
@@ -387,7 +388,7 @@ hydroxylamine concentrations of \SI{2.5E-6}{\percent}, \SI{5E-6}{\percent} and
 
 \subsection{Raw data}
 
-Each measurement was done twice, with results shown in table
+Each measurement was done thrice, with results shown in table
 \ref{tbl:inhibition_time}.
 
 \begin{table}
@@ -420,11 +421,12 @@ Each measurement was done twice, with results shown in table
 \end{table}
 
 
-\subsection{Reaktion speed as factor of enzyme inhibition}
+\subsection{Reaction speed as factor of enzyme inhibition}
 
-The calculatd velocities per substrate and hydroxylamine concentrations were
-graphed, as velocity over concentration shown in figure \ref{fig:inhibition},
-as well as the double reciprocal of 1/velocity over 1/concentration shown in
+The calculated velocities per substrate and hydroxylamine concentrations were
+graphed, as velocity over substrate concentration shown in figure
+\ref{fig:inhibition}, as well as the double reciprocal of 1 / velocity over
+1 / substrate concentration shown in
 figure \ref{fig:inhibition_lburk}.
 
 \begin{figure}
@@ -442,8 +444,8 @@ figure \ref{fig:inhibition_lburk}.
 \end{figure}
 
 In the Lineweaver Burk plot in figure \ref{fig:inhibition_lburk} it is evident
-that, as concentration of Hydroxylaminase goes up, the slope increases. This
-implies that inhibition is competitive, with Hydroxylaminase and \ce{H2O2}
+that, as concentration of hydroxylaminase goes up, the slope increases. This
+implies that inhibition is competitive\cite{wiki:lburk}, with hydroxylaminase and \ce{H2O2}
 competing for the same binding site within catalase.
 
 \chapter{Conclusion}
@@ -456,7 +458,7 @@ We were unable to reliably determine $K_m$ as no substrate saturation could be
 observed. This was likely due to a mistake in the experiment's execution,
 rather than not having reached the point where saturation should occur.
 
-We did however show that Hydroxylaminase seems to be a competitive inhibitor of
+We did however show that hydroxylaminase seems to be a competitive inhibitor of
 catalase.
 
 \bibliographystyle{vancouver}
